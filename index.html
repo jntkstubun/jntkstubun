@@ -9,7 +9,7 @@
 <!-- Google Fonts: Plus Jakarta Sans & Inter -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains Mono:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -807,8 +807,8 @@
           </div>
           <div class="field-mobile">
             <label>No HP Pengirim <span class="req">*</span></label>
-            <input type="tel" id="kp-hp-pengirim" placeholder="08xxxxxxxxxx" inputmode="numeric">
-            <div class="err-msg" id="err-kp-hp-pengirim">Nomor HP tidak valid (min 10 digit, diawali 08).</div>
+            <input type="tel" id="kp-hp-pengirim" placeholder="08xxxxxxxxxx atau nomor telp" inputmode="numeric">
+            <div class="err-msg" id="err-kp-hp-pengirim">Nomor HP/Telp tidak valid (jika 08 min 10 digit, selain 08 min 6 digit).</div>
           </div>
 
           <div class="section-label">Penerima</div>
@@ -819,8 +819,8 @@
           </div>
           <div class="field-mobile">
             <label>No HP Penerima <span class="req">*</span></label>
-            <input type="tel" id="kp-hp-penerima" placeholder="08xxxxxxxxxx" inputmode="numeric">
-            <div class="err-msg" id="err-kp-hp-penerima">Nomor HP tidak valid.</div>
+            <input type="tel" id="kp-hp-penerima" placeholder="08xxxxxxxxxx atau nomor telp" inputmode="numeric">
+            <div class="err-msg" id="err-kp-hp-penerima">Nomor HP/Telp tidak valid (jika 08 min 10 digit, selain 08 min 6 digit).</div>
           </div>
 
           <!-- SMART REGION AUTOCOMPLETE SEARCH FIELD -->
@@ -984,8 +984,8 @@
           </div>
           <div class="field-mobile">
             <label>No HP Pengirim <span class="req">*</span></label>
-            <input type="tel" id="kb-hp-pengirim" placeholder="08xxxxxxxxxx" inputmode="numeric">
-            <div class="err-msg" id="err-kb-hp-pengirim">Nomor HP tidak valid.</div>
+            <input type="tel" id="kb-hp-pengirim" placeholder="08xxxxxxxxxx atau nomor telp" inputmode="numeric">
+            <div class="err-msg" id="err-kb-hp-pengirim">Nomor HP/Telp tidak valid.</div>
           </div>
 
           <div class="section-label">Jumlah Paket</div>
@@ -1719,7 +1719,6 @@
     attachRegionAutocomplete('kp-kota', 'kp-kota-dropdown', 'kp-kecamatan', 'kp-kota', 'kp-provinsi');
     populateDatalists();
 
-    // Auto fill Kota & Provinsi when Kecamatan input changes
     var kecInput = document.getElementById('kp-kecamatan');
     if(kecInput){
       kecInput.addEventListener('change', function(){
@@ -2198,17 +2197,11 @@
     enforceDigitsOnly(document.getElementById(id));
   });
 
-  /* ---------------- Phone Formatter ---------------- */
+  /* ---------------- Phone Formatter & Flexible Validation ---------------- */
   function normalizePhoneInput(el){
     if(!el) return;
     el.addEventListener('input', function(){
       var digits = el.value.replace(/[^0-9]/g, '');
-      el.value = digits;
-    });
-    el.addEventListener('blur', function(){
-      var digits = el.value.replace(/[^0-9]/g, '');
-      if(digits.length === 0) return;
-      if(digits.charAt(0) !== '0'){ digits = '0' + digits; }
       el.value = digits;
     });
   }
@@ -2217,18 +2210,21 @@
   });
 
   function isValidPhone(value){
+    if(!value) return false;
     var digits = value.replace(/[^0-9]/g, '');
     if(digits.length === 0) return false;
-    if(digits.charAt(0) !== '0'){ digits = '0' + digits; }
-    if(digits.slice(0,2) !== '08') return false;
-    if(digits.length < 10 || digits.length > 13) return false;
-    return true;
+
+    // Rule: Jika depannya 08 -> minimal 10 digit, jika selain 08 -> minimal 6 digit
+    if(digits.slice(0, 2) === '08'){
+      return digits.length >= 10 && digits.length <= 14;
+    } else {
+      return digits.length >= 6 && digits.length <= 14;
+    }
   }
   
   function normalizedPhone(value){
-    var digits = value.replace(/[^0-9]/g, '');
-    if(digits.length > 0 && digits.charAt(0) !== '0'){ digits = '0' + digits; }
-    return digits;
+    if(!value) return '';
+    return value.replace(/[^0-9]/g, '');
   }
 
   /* ---------------- Field Error Helpers ---------------- */
@@ -2321,7 +2317,7 @@
 
     var checklistItems = [
       'Pengirim & Penerima terisi',
-      'No HP terverifikasi (min 10 digit, 08)',
+      'No HP/Telp terverifikasi',
       'Alamat & lokasi lengkap',
       'Jenis barang & metode pembayaran terisi (' + pembayaran + ')'
     ];
@@ -2362,8 +2358,8 @@
         '</div>' +
         '<div class="field-mobile">' +
           '<label>No HP Penerima <span class="req">*</span></label>' +
-          '<input type="tel" id="kb-hp-' + i + '" placeholder="08xxxxxxxxxx" inputmode="numeric">' +
-          '<div class="err-msg" id="err-kb-hp-' + i + '">Nomor HP tidak valid.</div>' +
+          '<input type="tel" id="kb-hp-' + i + '" placeholder="08xxxxxxxxxx atau nomor telp" inputmode="numeric">' +
+          '<div class="err-msg" id="err-kb-hp-' + i + '">Nomor HP/Telp tidak valid.</div>' +
         '</div>' +
         '<div class="field-mobile" style="position:relative;">' +
           '<label>⚡ Cari Kota / Kecamatan Otomatis</label>' +
