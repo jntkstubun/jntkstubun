@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>J&T Express KS Tubun — Dashboard Mobile</title>
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAVVklEQVR4nNV7e3hV1bXvb8y51t55EBIwBEFEJIAW5SVWEM4xPuAz2lqtuuPRHu+h9qr3nj482vZWjrzSov0UVGw/ewRae1orYoJUxVIVMURBLPIQCISEJAiEZwJ579dac/7uH3vvGDzHVmCn1/v7vvWt7Ky1xhpjrDHHHI85gdOEiJzyWykFkjoUCunTpXU2CIVCuqKiwnEc5+/2TkkK3/f+++//xcyZM58tKiq6E8Dg1A1aayQVIZ9H5GwRCoU0yZ70A47jXF5cXHzPxIkTr0nxmvYXz5071wGAm2+++YfWWpLkiRMn+dZbb7XPKy0tLywsLE7d6zgO0m0RoVBIf+Zrf/V73/ve08uWLavbvn07w+Ewa2pq1gMAyfRbY4rowoULXyfp0fejJH0mUVtby1/96ld/mTx58l0AdPIZOVtFfPaLX3rppbcsXLhwzaZNm9gDXvJY3ZPXtCLFxJIlSz6y1rJ13wETOdBILx61pPFJGpI8dOgQFy9evGXixImhHs+eybBQJFXqx5gxY27/5S9/+WFDQ8MpgsezUdPWcMBPWuWbPd6XXqQUsHTp0o0keXJvnd+1ey+76vfTj4RpaOl5cZOyin379nHBggXv9unT5x+BU/zD34KUlZXplLMdNGjQ9Keffvq9HoIbY+gbaxlv72Tn3nqe3L3LZyTSuwqoIB0A+Omj8/9Akh31+7zOujp2VlezfdcexpqaSFoaa+nFvW5FbNq0iT/60Y/+E8AFSeYUPt8alNbdvI+ZPXv2Kzt27EgJ7nueZwxJaw3DR4+wbcduduzexfa9tT67OntXAUVJJzi9ePp3OlpaGTt02Guvq2NHbQ07du1i59aP2VVXTz8aJUlaY0lDn6QlyVdffbV52rRp/wtIWAMA1ZN+KBTSSikAyPjWt771s7Vr10ZSX9z3fZNyvLGOTnZW17Bj2zZ2Vu9mR+1ettXu9RmLkuSfe00BAFSSwfPXvvNOxLa3sa12r+2srWXX7mp27qxix+bNbN32MSPHj6bkpud5KSfFw4cPc+bMmSsB5CdpqZTwyXdMeOaZZ7aEw+GUrfu+n/Cz1oux65P9bP9oMzu3bmNn1S527tnDzro6ttTW+SS5Zu3at09XAepv39INa4xRAA5+tHnzOsnKpmjHilKwWkBREMeFNj7iez9BuGoP4l2dcBwHtHQ8z+OgQYP8xx577JvPPvvs+9baEVprO3fuXGfFihVm5MiRt77xxhvv/+AHP7gsMzPT9z2fIkorrRE/3ozw9mr4hw4DChDtgCKgCKwAwWAGTdzD7377248AYN26dV/Y4Z6WZy4qKnIqKyv9K664IvTaK6+UneNmmEhXm1bGQDwDega0HmA8qJiBpYI7ahgyCgaC1sKS0Fp7ANxFixbtefDBByeR7Bw4cOCkZcuWrb/uuuuU7/tGKaVFBKRBpLYB3tEmSFCgAwFQByDagbgKcFzEQeQOGsS/fLzdn/IPU0crpeqstQqA/SIynY4FoLKy0pCU">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAVVklEQVR4nNV7e3hV1bXvb8y51t55EBIwBEFEJIAW5SVWEM4xPuAz2lqtuuPRHu+h9qr3nj482vZWjrzSov0UVGw/ewRae1orYoJUxVIVMURBLPIQCISEJAiEZwJ579dac/7uH3vvGDzHVmCn1/v7vvWt7Ky1xhpjrDHHHI85gdOEiJzyWykFkjoUCunTpXU2CIVCuqKiwnEc5+/2TkkK3/f+++//xcyZM58tKiq6E8Dg1A1aayQVIZ9H5GwRCoU0yZ70A47jXF5cXHzPxIkTr0nxmvYXz5071wGAm2+++YfWWpLkiRMn+dZbb7XPKy0tLywsLE7d6zgO0m0RoVBIf+Zrf/V73/ve08uWLavbvn07w+Ewa2pq1gMAyfRbY4rowoULXyfp0fejJH0mUVtby1/96ld/mTx58l0AdPIZOVtFfPaLX3rppbcsXLhwzaZNm9gDXvJY3ZPXtCLFxJIlSz6y1rJ13wETOdBILx61pPFJGpI8dOgQFy9evGXixImhHs+eybBQJFXqx5gxY27/5S9/+WFDQ8MpgsezUdPWcMBPWuWbPd6XXqQUsHTp0o0keXJvnd+1ey+76vfTj4RpaOl5cZOyin379nHBggXv9unT5x+BU/zD34KUlZXplLMdNGjQ9Keffvq9HoIbY+gbaxlv72Tn3nqe3L3LZyTSuwqoIB0A+Omj8/9Akh31+7zOujp2VlezfdcexpqaSFoaa+nFvW5FbNq0iT/60Y/+E8AFSeYUPt8alNbdvI+ZPXv2Kzt27EgJ7nueZwxJaw3DR4+wbcduduzexfa9tT67OntXAUVJJzi9ePp3OlpaGTt02Guvq2NHbQ07du1i59aP2VVXTz8aJUlaY0lDn6QlyVdffbV52rRp/wtIWAMA1ZN+KBTSSikAyPjWt771s7Vr10ZSX9z3fZNyvLGOTnZW17Bj2zZ2Vu9mR+1ettXu9RmLkuSfe00BAFSSwfPXvvNOxLa3sa12r+2srWXX7mp27qxix+bNbN32MSPHj6bkud5KSfFw4cPc+bMmSsB5CdpqZTwyXdMeOaZZ7aEw+GUrfu+n/Cz1oux65P9bP9oMzu3bmNn1S527tnDzro6ttTW+SS5Zu3at09XAepv39INa4xRAA5+tHnzOsnKpmjHilKwWkBREMeFNj7iez9BuGoP4l2dcBwHtHQ8z+OgQYP8xx577JvPPvvs+9baEVprO3fuXGfFihVm5MiRt77xxhvv/+AHP7gsMzPT9z2fIkorrRE/3ozw9mr4hw4DChDtgCKgCKwAwWAGTdzD7377248AYN26dV/Y4Z6WZy4qKnIqKyv9K664IvTaK6+UneNmmEhXm1bGQDwDega0HmA8qJiBpYI7ahgyCgaC1sKS0Fp7ANxFixbtefDBByeR7Bw4cOCkZcuWrb/uuuuU7/tGKaVFBKRBpLYB3tEmSFCgAwFQByDagbgKcFzEQeQOGsS/fLzdn/IPU0crpeqstQqA/SIynY4FoLKy0pCU">
 
 <!-- Google Fonts: Plus Jakarta Sans & Inter -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -652,7 +652,7 @@
       📍 Jl. Kelayan B No. 02 (Depan Masjid Muhammadiyah)
     </div>
 
-    <!-- Main View Container -->
+    <!-- Main Container -->
     <main id="view-container">
 
       <!-- ---- VIEW: MENU / DASHBOARD ---- -->
@@ -855,23 +855,29 @@
           </div>
 
           <div class="grid-2">
-            <div class="field-mobile">
+            <div class="field-mobile" style="position:relative;">
               <label>Kecamatan <span class="req">*</span></label>
-              <input type="text" id="kp-kecamatan" placeholder="Kecamatan">
+              <input type="text" id="kp-kecamatan" list="kecamatan-list" placeholder="Pilih / ketik Kecamatan" autocomplete="off">
+              <div id="kp-kecamatan-dropdown" class="region-dropdown hidden"></div>
               <div class="err-msg" id="err-kp-kecamatan">Wajib.</div>
             </div>
-            <div class="field-mobile">
+            <div class="field-mobile" style="position:relative;">
               <label>Kota/Kab <span class="req">*</span></label>
-              <input type="text" id="kp-kota" placeholder="Kota/Kab">
+              <input type="text" id="kp-kota" list="kota-list" placeholder="Pilih / ketik Kota" autocomplete="off">
+              <div id="kp-kota-dropdown" class="region-dropdown hidden"></div>
               <div class="err-msg" id="err-kp-kota">Wajib.</div>
             </div>
           </div>
 
           <div class="field-mobile">
             <label>Provinsi <span class="req">*</span></label>
-            <input type="text" id="kp-provinsi" placeholder="Provinsi">
+            <input type="text" id="kp-provinsi" list="provinsi-list" placeholder="Pilih / ketik Provinsi">
             <div class="err-msg" id="err-kp-provinsi">Wajib diisi.</div>
           </div>
+
+          <datalist id="kecamatan-list"></datalist>
+          <datalist id="kota-list"></datalist>
+          <datalist id="provinsi-list"></datalist>
 
           <div class="section-label">Barang &amp; Ongkir</div>
           <div class="field-mobile">
@@ -1680,8 +1686,54 @@
     });
   }
 
+  function populateDatalists(){
+    var kecListEl = document.getElementById('kecamatan-list');
+    var kotaListEl = document.getElementById('kota-list');
+    var provListEl = document.getElementById('provinsi-list');
+    
+    if(!kecListEl || !kotaListEl || !provListEl) return;
+
+    var kecSet = {}, kotaSet = {}, provSet = {};
+    REGION_DB.forEach(function(item){
+      kecSet[item.kec] = true;
+      kotaSet[item.kota] = true;
+      provSet[item.prov] = true;
+    });
+
+    function setOptions(el, obj){
+      var html = '';
+      Object.keys(obj).sort().forEach(function(val){
+        html += '<option value="' + val + '">';
+      });
+      el.innerHTML = html;
+    }
+
+    setOptions(kecListEl, kecSet);
+    setOptions(kotaListEl, kotaSet);
+    setOptions(provListEl, provSet);
+  }
+
   function setupRegionAutocomplete(){
     attachRegionAutocomplete('kp-region-search', 'kp-region-dropdown', 'kp-kecamatan', 'kp-kota', 'kp-provinsi');
+    attachRegionAutocomplete('kp-kecamatan', 'kp-kecamatan-dropdown', 'kp-kecamatan', 'kp-kota', 'kp-provinsi');
+    attachRegionAutocomplete('kp-kota', 'kp-kota-dropdown', 'kp-kecamatan', 'kp-kota', 'kp-provinsi');
+    populateDatalists();
+
+    // Auto fill Kota & Provinsi when Kecamatan input changes
+    var kecInput = document.getElementById('kp-kecamatan');
+    if(kecInput){
+      kecInput.addEventListener('change', function(){
+        var val = kecInput.value.trim().toLowerCase();
+        var match = REGION_DB.find(function(item){
+          return item.kec.toLowerCase() === val;
+        });
+        if(match){
+          document.getElementById('kp-kota').value = match.kota;
+          document.getElementById('kp-provinsi').value = match.prov;
+          showToast('Kota & Provinsi terisi otomatis: ' + match.kota + '!');
+        }
+      });
+    }
   }
 
   /* ---------------- Theme Toggle Handler ---------------- */
@@ -2329,14 +2381,16 @@
           '<div class="field-mobile"><label>RW</label><input type="text" id="kb-rw-' + i + '" placeholder="005" inputmode="numeric"></div>' +
         '</div>' +
         '<div class="grid-2">' +
-          '<div class="field-mobile">' +
+          '<div class="field-mobile" style="position:relative;">' +
             '<label>Kecamatan <span class="req">*</span></label>' +
-            '<input type="text" id="kb-kecamatan-' + i + '" placeholder="Kecamatan">' +
+            '<input type="text" id="kb-kecamatan-' + i + '" list="kecamatan-list" placeholder="Pilih / ketik Kecamatan" autocomplete="off">' +
+            '<div id="kb-kecamatan-dropdown-' + i + '" class="region-dropdown hidden"></div>' +
             '<div class="err-msg" id="err-kb-kecamatan-' + i + '">Wajib.</div>' +
           '</div>' +
-          '<div class="field-mobile">' +
+          '<div class="field-mobile" style="position:relative;">' +
             '<label>Kota/Kab <span class="req">*</span></label>' +
-            '<input type="text" id="kb-kota-' + i + '" placeholder="Kota/Kab">' +
+            '<input type="text" id="kb-kota-' + i + '" list="kota-list" placeholder="Pilih / ketik Kota" autocomplete="off">' +
+            '<div id="kb-kota-dropdown-' + i + '" class="region-dropdown hidden"></div>' +
             '<div class="err-msg" id="err-kb-kota-' + i + '">Wajib.</div>' +
           '</div>' +
         '</div>' +
@@ -2367,6 +2421,8 @@
       enforceDigitsOnly(document.getElementById('kb-rw-' + j));
       normalizePhoneInput(document.getElementById('kb-hp-' + j));
       attachRegionAutocomplete('kb-region-search-' + j, 'kb-region-dropdown-' + j, 'kb-kecamatan-' + j, 'kb-kota-' + j);
+      attachRegionAutocomplete('kb-kecamatan-' + j, 'kb-kecamatan-dropdown-' + j, 'kb-kecamatan-' + j, 'kb-kota-' + j);
+      attachRegionAutocomplete('kb-kota-' + j, 'kb-kota-dropdown-' + j, 'kb-kecamatan-' + j, 'kb-kota-' + j);
     }
     attachRadioToggle(kbPenerimaContainer);
   }
