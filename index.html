@@ -1,0 +1,2855 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>J&T Express KS Tubun — Dashboard Mobile</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAVVklEQVR4nNV7e3hV1bXvb8y51t55EBIwBEFEJIAW5SVWEM4xPuAz2lqtuuPRHu+h9qr3nj482vZWjrzSov0UVGw/ewRae1orYoJUxVIVMURBLPIQCISEJAiEZwJ579dac/7uH3vvGDzHVmCn1/v7vvWt7Ky1xhpjrDHHHI85gdOEiJzyWykFkjoUCunTpXU2CIVCuqKiwnEc5+/2TkkK3/f+++//xcyZM58tKiq6E8Dg1A1aayQVIZ9H5GwRCoU0yZ70A47jXF5cXHzPxIkTr0nxmvYXz5071wGAm2+++YfWWpLkiRMn+dZbb7XPKy0tLywsLE7d6zgO0m0RoVBIf+Zrf/V73/ve08uWLavbvn07w+Ewa2pq1gMAyfRbY4rowoULXyfp0fejJH0mUVtby1/96ld/mTx58l0AdPIZOVtFfPaLX3rppbcsXLhwzaZNm9gDXvJY3ZPXtCLFxJIlSz6y1rJ13wETOdBILx61pPFJGpI8dOgQFy9evGXixImhHs+eybBQJFXqx5gxY27/5S9/+WFDQ8MpgsezUdPWcMBPWuWbPd6XXqQUsHTp0o0keXJvnd+1ey+76vfTj4RpaOl5cZOyin379nHBggXv9unT5x+BU/zD34KUlZXplLMdNGjQ9Keffvq9HoIbY+gbaxlv72Tn3nqe3L3LZyTSuwqoIB0A+Omj8/9Akh31+7zOujp2VlezfdcexpqaSFoaa+nFvW5FbNq0iT/60Y/+E8AFSeYUPt8alNbdvI+ZPXv2Kzt27EgJ7nueZwxJaw3DR4+wbcduduzexfa9tT67OntXAUVJJzi9ePp3OlpaGTt02Guvq2NHbQ07du1i59aP2VVXTz8aJUlaY0lDn6QlyVdffbV52rRp/wtIWAMA1ZN+KBTSSikAyPjWt771s7Vr10ZSX9z3fZNyvLGOTnZW17Bj2zZ2Vu9mR+1ettXu9RmLkuSfe00BAFSSwfPXvvNOxLa3sa12r+2srWXX7mp27qxix+bNbN32MSPHj6bkpud5KSfFw4cPc+bMmSsB5CdpqZTwyXdMeOaZZ7aEw+GUrfu+n/Cz1oux65P9bP9oMzu3bmNn1S527tnDzro6ttTW+SS5Zu3at09XAepv39INa4xRAA5+tHnzOsnKpmjHilKwWkBREMeFNj7iez9BuGoP4l2dcBwHtHQ8z+OgQYP8xx577JvPPvvs+9baEVprO3fuXGfFihVm5MiRt77xxhvv/+AHP7gsMzPT9z2fIkorrRE/3ozw9mr4hw4DChDtgCKgCKwAwWAGTdzD7377248AYN26dV/Y4Z6WZy4qKnIqKyv9K664IvTaK6+UneNmmEhXm1bGQDwDega0HmA8qJiBpYI7ahgyCgaC1sKS0Fp7ANxFixbtefDBByeR7Bw4cOCkZcuWrb/uuuuU7/tGKaVFBKRBpLYB3tEmSFCgAwFQByDagbgKcFzEQeQOGsS/fLzdn/IPU0crpeqstQqA/SIynY4FoLKy0pCU">
+
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* Ultra-Clean Modern Color Tokens */
+    --bg-app: #090D16;
+    --bg-surface: #131926;
+    --bg-card: rgba(23, 31, 46, 0.85);
+    --bg-card-solid: #172033;
+    --bg-input: #0E1422;
+    
+    /* J&T Signature Brand Colors */
+    --jt-red: #E30613;
+    --jt-red-bright: #FF2E3B;
+    --jt-red-soft: rgba(227, 6, 19, 0.12);
+    --jt-red-glow: rgba(227, 6, 19, 0.28);
+    
+    --amber: #F59E0B;
+    --amber-soft: rgba(245, 158, 11, 0.12);
+    
+    /* Functional UI Colors */
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
+    --border-active: rgba(255, 46, 59, 0.5);
+    
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    
+    --success: #10B981;
+    --success-bg: rgba(16, 185, 129, 0.12);
+    --error: #EF4444;
+    --error-bg: rgba(239, 68, 68, 0.12);
+    
+    --radius-app: 20px;
+    --radius-card: 16px;
+    --radius-btn: 12px;
+    --radius-sm: 8px;
+    
+    --shadow-card: 0 10px 28px -6px rgba(0, 0, 0, 0.4);
+    --shadow-float: 0 16px 36px -8px rgba(0, 0, 0, 0.6);
+  }
+
+  [data-theme="light"] {
+    --bg-app: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --bg-card-solid: #FFFFFF;
+    --bg-input: #F1F5F9;
+    
+    --border: rgba(0, 0, 0, 0.07);
+    --border-strong: rgba(0, 0, 0, 0.14);
+    --border-active: rgba(227, 6, 19, 0.4);
+    
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    
+    --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    --shadow-float: 0 12px 32px -4px rgba(0, 0, 0, 0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  
+  html, body {
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg-app);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  h1, h2, h3, h4, .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+  code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+  
+  button { font-family: inherit; cursor: pointer; border: none; outline: none; background: none; }
+  input, select, textarea { font-family: inherit; color: inherit; font-size: 16px !important; /* Prevents mobile iOS auto-zoom */ }
+  a { color: inherit; text-decoration: none; }
+  .hidden { display: none !important; }
+
+  /* Smooth Screen Transition */
+  .view {
+    animation: mobileSlideIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes mobileSlideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- WELCOME SCREEN ---------- */
+  #welcome-screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: radial-gradient(circle at 50% 20%, var(--jt-red-soft) 0%, var(--bg-app) 70%);
+  }
+
+  .welcome-card-mobile {
+    width: 100%; max-width: 400px;
+    text-align: center;
+    padding: 36px 24px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-app);
+    box-shadow: var(--shadow-float);
+  }
+
+  .welcome-icon-box {
+    width: 68px; height: 68px;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--jt-red-bright), var(--jt-red));
+    display: flex; align-items: center; justify-content: center;
+    color: #FFF; font-weight: 800; font-size: 22px;
+    box-shadow: 0 10px 24px var(--jt-red-glow);
+  }
+
+  .welcome-card-mobile h1 {
+    font-size: 24px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.4px;
+  }
+
+  .welcome-card-mobile p {
+    color: var(--text-secondary); font-size: 14px; margin-bottom: 28px; line-height: 1.5;
+  }
+
+  /* BUTTONS DESIGN SYSTEM (Mobile-First Touch Targets) */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 52px;
+    padding: 14px 20px;
+    border-radius: var(--radius-btn);
+    font-weight: 700; font-size: 15px;
+    transition: transform 0.15s ease, filter 0.15s ease;
+    width: 100%;
+  }
+  .btn:active { transform: scale(0.97); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--jt-red-bright) 0%, var(--jt-red) 100%);
+    color: #FFFFFF;
+    box-shadow: 0 6px 18px var(--jt-red-glow);
+  }
+  .btn-primary:active { filter: brightness(1.1); }
+
+  .btn-outline {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    color: var(--text-primary);
+  }
+
+  .btn-wa {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    color: var(--text-primary);
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-radius: var(--radius-btn);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-wa:active { border-color: var(--success); background: var(--success-bg); }
+  .btn-wa .wa-name { font-weight: 700; font-size: 14px; color: var(--text-primary); display: flex; align-items: center; gap: 6px; }
+  .btn-wa .wa-num { color: var(--text-muted); font-size: 12.5px; font-family: 'JetBrains Mono', monospace; }
+  
+  .badge-duty-live {
+    font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 10px;
+    background: var(--success-bg); color: var(--success); border: 1px solid rgba(16,185,129,0.3);
+  }
+  .badge-off-live {
+    font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px;
+    background: var(--error-bg); color: var(--error); border: 1px solid rgba(239,68,68,0.3);
+  }
+
+  /* ---------- MOBILE DASHBOARD APP SHELL ---------- */
+  #dashboard-screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 76px; /* Space for Mobile Bottom Nav */
+  }
+
+  /* Header Mobile */
+  header.dash-header-mobile {
+    position: sticky; top: 0; z-index: 40;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+    backdrop-filter: blur(12px);
+  }
+
+  .header-content {
+    max-width: 500px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .header-brand { display: flex; align-items: center; gap: 10px; }
+  
+  .brand-badge {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--jt-red-bright), var(--jt-red));
+    color: #FFF; font-weight: 800; font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .brand-info h1 { font-size: 15px; font-weight: 800; line-height: 1.1; letter-spacing: -0.2px; }
+  .brand-info .sub { font-size: 11px; color: var(--amber); font-weight: 700; }
+
+  .header-actions { display: flex; align-items: center; gap: 8px; }
+
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 10px; border-radius: 20px;
+    font-size: 11px; font-weight: 700;
+    background: var(--success-bg); color: var(--success);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+  }
+  .status-pill.closed {
+    background: var(--error-bg); color: var(--error);
+    border-color: rgba(239, 68, 68, 0.25);
+  }
+  .dot-pulse {
+    width: 6px; height: 6px; border-radius: 50%; background: currentColor;
+    animation: pulse 1.8s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+  .btn-icon-theme {
+    width: 34px; height: 34px; border-radius: 9px;
+    border: 1px solid var(--border); background: var(--bg-app);
+    color: var(--text-primary); font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Address Bar Mobile */
+  .address-bar-mobile {
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    padding: 7px 16px; font-size: 11.5px; color: var(--text-secondary);
+    text-align: center;
+  }
+
+  /* Main Container */
+  main#view-container {
+    flex: 1;
+    width: 100%; max-width: 500px;
+    margin: 0 auto;
+    padding: 16px 14px 24px;
+  }
+
+  /* Modern Promo Ticker & Highlight Banner */
+  .promo-banner-card {
+    background: linear-gradient(135deg, rgba(227, 6, 19, 0.15) 0%, rgba(245, 158, 11, 0.12) 100%);
+    border: 1px solid var(--border-active);
+    border-radius: var(--radius-card);
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-card);
+  }
+  .promo-badge-tag {
+    display: inline-block;
+    font-size: 10.5px; font-weight: 800;
+    padding: 3px 8px; border-radius: 20px;
+    background: var(--jt-red-bright); color: #FFF;
+    margin-bottom: 8px; letter-spacing: 0.4px;
+  }
+  .promo-title {
+    font-size: 15px; font-weight: 800; color: var(--text-primary);
+    line-height: 1.3; margin-bottom: 4px;
+  }
+  .promo-sub {
+    font-size: 12.5px; color: var(--text-secondary); line-height: 1.4; margin-bottom: 12px;
+  }
+  .promo-pills {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .promo-pill {
+    font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px;
+    background: var(--bg-surface); border: 1px solid var(--border);
+    color: var(--text-primary);
+  }
+
+  /* Duty Shift Widget Card */
+  .duty-schedule-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-card);
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-card);
+  }
+  .duty-schedule-card h3 {
+    font-size: 13px; font-weight: 800; color: var(--amber);
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .duty-row-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 6px 0; border-bottom: 1px dashed var(--border); font-size: 12.5px;
+  }
+  .duty-row-item:last-child { border-bottom: none; }
+  .duty-row-item .label { color: var(--text-secondary); font-weight: 600; }
+  .duty-row-item .val { font-weight: 700; color: var(--text-primary); }
+
+  /* Feature #5: Resi History Card Styling */
+  .resi-history-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 12px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    gap: 8px;
+  }
+  .resi-history-item .resi-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700; font-size: 13px; color: var(--text-primary);
+  }
+  .resi-history-item .resi-meta {
+    display: flex; align-items: center; gap: 6px; font-size: 10.5px; color: var(--text-muted); margin-top: 2px;
+  }
+  .resi-history-item .resi-actions {
+    display: flex; align-items: center; gap: 4px;
+  }
+  .btn-resi-act {
+    padding: 6px 9px; border-radius: 6px;
+    font-size: 11.5px; font-weight: 700;
+    border: 1px solid var(--border-strong);
+    background: var(--bg-surface); color: var(--text-primary);
+    transition: all 0.15s ease;
+  }
+  .btn-resi-act:active { background: var(--jt-red-soft); border-color: var(--jt-red-bright); }
+
+  /* REGION AUTOCOMPLETE DROPDOWN STYLING */
+  .region-dropdown {
+    position: absolute; top: 100%; left: 0; right: 0; z-index: 60;
+    background: var(--bg-surface);
+    border: 1px solid var(--jt-red-bright);
+    border-radius: var(--radius-sm);
+    max-height: 240px; overflow-y: auto;
+    box-shadow: var(--shadow-float);
+    margin-top: 4px;
+  }
+  .region-item {
+    padding: 10px 12px; border-bottom: 1px solid var(--border);
+    cursor: pointer; font-size: 13px;
+    display: flex; flex-direction: column; gap: 2px;
+    text-align: left; width: 100%;
+  }
+  .region-item:hover, .region-item:active {
+    background: var(--jt-red-soft);
+  }
+  .region-item .reg-name { font-weight: 700; color: var(--text-primary); }
+  .region-item .reg-sub { font-size: 11px; color: var(--text-muted); }
+
+  /* Mobile App Menu Cards Grid */
+  .mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .mobile-card-item {
+    display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;
+    min-height: 104px;
+    padding: 14px 14px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    transition: transform 0.12s ease, border-color 0.12s ease;
+  }
+  .mobile-card-item:active { transform: scale(0.97); border-color: var(--border-active); }
+  
+  .mobile-card-item .icon-circle {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--jt-red-soft); color: var(--jt-red-bright);
+    font-size: 18px; margin-bottom: 10px;
+  }
+
+  .mobile-card-item .title {
+    font-size: 13.5px; font-weight: 700; line-height: 1.25;
+  }
+
+  .mobile-card-item .badge-tag {
+    position: absolute; top: 10px; right: 10px;
+    font-size: 9.5px; font-weight: 800; padding: 2px 6px; border-radius: 6px;
+    background: var(--amber-soft); color: var(--amber);
+  }
+
+  /* Single vs Bulk Choice Mobile */
+  .choice-list { display: flex; flex-direction: column; gap: 12px; }
+  .choice-card {
+    display: flex; align-items: center; gap: 14px;
+    padding: 16px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    color: var(--text-primary);
+    text-align: left; width: 100%;
+  }
+  .choice-card:active { border-color: var(--border-active); transform: scale(0.98); }
+  .choice-card .icon {
+    width: 42px; height: 42px; border-radius: 10px; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--jt-red-soft); color: var(--jt-red-bright); font-size: 20px;
+  }
+  .choice-card .title { font-size: 14.5px; font-weight: 800; }
+  .choice-card .sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+  /* Chips Mobile Selector */
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    min-width: 42px; min-height: 42px;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    font-weight: 700; font-size: 14px;
+  }
+  .chip.active {
+    border-color: var(--jt-red-bright);
+    background: var(--jt-red-soft); color: var(--jt-red-bright);
+  }
+
+  /* Form Container */
+  .card-form {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: 18px 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-card);
+  }
+  .card-form h2 { font-size: 17px; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.3px; }
+  .card-form .sub { font-size: 12.5px; color: var(--text-secondary); margin-bottom: 16px; }
+
+  .section-label {
+    font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.6px;
+    color: var(--jt-red-bright); font-weight: 800; margin: 20px 0 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .section-label::after { content:''; flex:1; height:1px; background:var(--border); }
+  .section-label:first-child { margin-top:0; }
+
+  .field-mobile { margin-bottom: 14px; }
+  .field-mobile label {
+    display: block; font-size: 12.5px; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px;
+  }
+  .field-mobile .req { color: var(--jt-red-bright); }
+  
+  .field-mobile input, .field-mobile select, .field-mobile textarea {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    color: var(--text-primary);
+    transition: border-color 0.15s ease;
+  }
+  .field-mobile input:focus, .field-mobile select:focus, .field-mobile textarea:focus {
+    outline: none; border-color: var(--jt-red-bright);
+  }
+  .field-mobile input.err-input, .field-mobile textarea.err-input { border-color: var(--error); }
+  .field-mobile .err-msg {
+    display: none; margin-top: 5px; font-size: 11.5px; color: var(--error); font-weight: 600;
+  }
+  .field-mobile .err-msg.show { display: block; }
+  .field-mobile .hint { margin-top: 5px; font-size: 11.5px; color: var(--text-muted); }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+
+  /* Radio Option Cards */
+  .radio-group { display: flex; gap: 8px; flex-wrap: wrap; }
+  .radio-card {
+    flex: 1; min-width: 120px;
+    display: flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    background: var(--bg-input);
+    min-height: 48px; cursor: pointer;
+  }
+  .radio-card.checked {
+    border-color: var(--jt-red-bright); background: var(--jt-red-soft);
+  }
+  .radio-card input { accent-color: var(--jt-red-bright); width: 16px; height: 16px; }
+  .radio-card span { font-size: 13px; font-weight: 700; }
+  .radio-card small { display: block; color: var(--text-muted); font-size: 10.5px; font-weight: 500; }
+
+  .banner-alert {
+    padding: 12px 14px; border-radius: var(--radius-sm);
+    font-size: 12px; font-weight: 600; margin-bottom: 14px;
+    background: var(--amber-soft); border: 1px solid rgba(245,158,11,0.3); color: var(--amber);
+    line-height: 1.4;
+  }
+
+  /* Checklist & Preview */
+  .checklist-mobile { list-style: none; margin-bottom: 16px; }
+  .checklist-mobile li {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12.5px; color: var(--text-secondary); padding: 4px 0;
+  }
+  .checklist-mobile li .tick {
+    color: var(--success); font-weight: 900; font-size: 12px;
+  }
+
+  .preview-wrapper { position: relative; margin-bottom: 16px; }
+  .preview-box {
+    background: var(--bg-input);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    font-size: 12.5px; line-height: 1.6;
+    color: var(--text-primary);
+    white-space: pre-wrap; font-family: 'JetBrains Mono', monospace;
+    max-height: 340px; overflow-y: auto;
+  }
+  .btn-copy-box {
+    position: absolute; top: 8px; right: 8px;
+    padding: 5px 10px; border-radius: 6px;
+    background: var(--bg-surface); border: 1px solid var(--border-strong);
+    color: var(--text-primary); font-size: 11px; font-weight: 700;
+  }
+
+  /* Top Navigation Bar Inside View */
+  .top-view-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .top-view-bar .btn-back {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 700; color: var(--text-secondary);
+    padding: 6px 10px; border-radius: 8px;
+    background: var(--bg-surface); border: 1px solid var(--border);
+  }
+
+  /* Toast Mobile */
+  .toast-mobile {
+    position: fixed; left: 50%; bottom: 84px; transform: translateX(-50%) translateY(20px);
+    background: var(--bg-surface); border: 1px solid var(--jt-red-bright);
+    color: var(--text-primary); font-size: 13px; font-weight: 600;
+    padding: 12px 18px; border-radius: 24px;
+    opacity: 0; pointer-events: none; transition: all 0.25s ease;
+    z-index: 100; max-width: 88%; text-align: center;
+    box-shadow: var(--shadow-float);
+  }
+  .toast-mobile.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* Hours List */
+  .hours-list { list-style: none; }
+  .hours-list li {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 9px 0; border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .hours-list li:last-child { border-bottom: none; }
+  .hours-list li span:first-child { color: var(--text-secondary); font-weight: 600; }
+  .hours-list li span:last-child { color: var(--amber); font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+
+  /* ------------ FIXED MOBILE BOTTOM NAVIGATION BAR ------------ */
+  nav.mobile-bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    padding: 6px 12px 10px;
+  }
+  .nav-inner {
+    max-width: 500px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-around;
+  }
+  .nav-tab {
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    color: var(--text-muted); font-size: 10.5px; font-weight: 700;
+    padding: 4px 8px; border-radius: 8px; transition: color 0.15s ease;
+  }
+  .nav-tab .icon { font-size: 18px; line-height: 1; }
+  .nav-tab.active { color: var(--jt-red-bright); }
+
+  .recipient-card-mobile {
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    padding: 14px; margin-bottom: 12px;
+    background: var(--bg-input);
+  }
+  .recipient-card-mobile h3 {
+    font-size: 13px; font-weight: 800; color: var(--jt-red-bright); margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ WELCOME SCREEN ============ -->
+  <section id="welcome-screen">
+    <div class="welcome-card-mobile">
+      <div class="welcome-icon-box">J&amp;T</div>
+      <h1>J&amp;T Express KS Tubun</h1>
+      <p>Dashboard Resmi Pelayanan Pengiriman Paket &amp; Pick-up Banjarmasin.</p>
+      <button class="btn btn-primary" id="btn-enter-dashboard">
+        <span>Masuk ke Dashboard</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ MOBILE DASHBOARD SHELL ============ -->
+  <div id="dashboard-screen" class="hidden">
+    
+    <!-- Mobile Top Header -->
+    <header class="dash-header-mobile">
+      <div class="header-content">
+        <div class="header-brand">
+          <div class="brand-badge">J&amp;T</div>
+          <div class="brand-info">
+            <h1>J&amp;T KS_TUBUN</h1>
+            <div class="sub">Banjarmasin</div>
+          </div>
+        </div>
+        
+        <div class="header-actions">
+          <div id="live-status-pill" class="status-pill">
+            <span class="dot-pulse"></span>
+            <span id="status-text">Operational</span>
+          </div>
+          <button class="btn-icon-theme" id="btn-toggle-theme" title="Tema">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="address-bar-mobile">
+      📍 Jl. Kelayan B No. 02 (Depan Masjid Muhammadiyah)
+    </div>
+
+    <!-- Main View Container -->
+    <main id="view-container">
+
+      <!-- ---- VIEW: MENU / DASHBOARD ---- -->
+      <div class="view" id="view-menu">
+        
+        <!-- Promo Ticker & Highlight Banner -->
+        <div class="promo-banner-card">
+          <div class="promo-badge-tag">🔥 PROMO SPESIAL HARI INI</div>
+          <div class="promo-title">Diskon Ongkir 20% Pengiriman Reguler!</div>
+          <div class="promo-sub">Kirim paket ke seluruh Indonesia lebih hemat &amp; cepat di J&amp;T Express KS Tubun.</div>
+          <div class="promo-pills">
+            <span class="promo-pill">⚡ Lacak Cepat 24/7</span>
+            <span class="promo-pill">🤝 Join Seller Club</span>
+            <span class="promo-pill">🚚 Gratis Pick-up</span>
+          </div>
+        </div>
+
+        <!-- Live Duty Shift Schedule Widget -->
+        <div class="duty-schedule-card">
+          <h3>
+            <span>📅 Shift Admin Bertugas (Otomatis)</span>
+            <span id="duty-week-tag" style="font-size:11px; font-weight:700; color:var(--text-muted);">Minggu Ini</span>
+          </h3>
+          <div class="duty-row-item">
+            <span class="label">Shift 1 (08.00 - 16.30 WITA)</span>
+            <span class="val" id="duty-shift1-name">Admin Imam</span>
+          </div>
+          <div class="duty-row-item">
+            <span class="label">Shift 2 (13.00 - 21.00 WITA)</span>
+            <span class="val" id="duty-shift2-name">Admin Rahma</span>
+          </div>
+          <div class="duty-row-item">
+            <span class="label">Status Saat Ini</span>
+            <span class="val" id="duty-current-status" style="color:var(--success);">Admin Bertugas: Admin Imam</span>
+          </div>
+        </div>
+
+        <!-- Menu Cards Grid -->
+        <div class="mobile-grid">
+          <button class="mobile-card-item" data-menu="kirim">
+            <span class="badge-tag">DISKON 20%</span>
+            <div class="icon-circle">📦</div>
+            <div class="title">Kirim Paket</div>
+          </button>
+          
+          <button class="mobile-card-item" data-menu="pengambilan">
+            <div class="icon-circle">📥</div>
+            <div class="title">Ambil Paket</div>
+          </button>
+          
+          <button class="mobile-card-item" data-menu="gabung">
+            <span class="badge-tag" style="background:var(--success-bg); color:var(--success);">SELLER</span>
+            <div class="icon-circle">🤝</div>
+            <div class="title">Group Seller</div>
+          </button>
+          
+          <button class="mobile-card-item" data-menu="sprinter">
+            <div class="icon-circle">🚚</div>
+            <div class="title">Sprinter Kurir</div>
+          </button>
+          
+          <button class="mobile-card-item" data-menu="lacak">
+            <div class="icon-circle">📍</div>
+            <div class="title">Lacak Cepat</div>
+          </button>
+          
+          <button class="mobile-card-item" data-menu="ongkir">
+            <div class="icon-circle">💰</div>
+            <div class="title">Cek Tarif Ongkir</div>
+          </button>
+        </div>
+
+        <!-- FEATURE #5: RESI HISTORY MOBILE CARD WIDGET -->
+        <div class="card-form" style="margin-top:16px; margin-bottom:16px;" id="resi-history-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+            <h2>📜 Riwayat Resi Terakhir (HP Anda)</h2>
+            <button id="btn-clear-resi-history" style="font-size:11px; font-weight:700; color:var(--text-muted); padding:4px 8px; border-radius:6px; border:1px solid var(--border);">Hapus Semua</button>
+          </div>
+          <div class="sub">Tersimpan otomatis di HP Anda untuk akses cepat 1-tap.</div>
+          
+          <div id="resi-history-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+        </div>
+
+        <!-- Quick Admin Contact Card -->
+        <div class="card-form" style="margin-bottom:0;">
+          <h2>Hubungi Admin (WhatsApp)</h2>
+          <div class="sub">Prioritas tombol menyesuaikan shift bertugas secara otomatis.</div>
+          <div style="display:flex; flex-direction:column; gap:8px;" id="admin-buttons-container-home">
+            <a class="btn btn-wa" id="btn-admin-imam-home" href="https://wa.me/62887435377117" target="_blank" rel="noopener">
+              <div class="wa-name">
+                <span>Admin Imam (+62 887-4353-77117)</span>
+                <span class="badge-duty-live" id="badge-imam-home">Shift 1</span>
+              </div>
+              <span>WA →</span>
+            </a>
+            <a class="btn btn-wa" id="btn-admin-rahma-home" href="https://wa.me/625252743530" target="_blank" rel="noopener">
+              <div class="wa-name">
+                <span>Admin Rahma (+62 5252-743-530)</span>
+                <span class="badge-duty-live" id="badge-rahma-home">Shift 2</span>
+              </div>
+              <span>WA →</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ---- VIEW: PILIHAN KIRIM PAKET ---- -->
+      <div class="view hidden" id="view-kirim-pilihan">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="menu">← Kembali</button>
+        </div>
+        <div class="card-form">
+          <h2>Kirim Paket (Diskon 20%)</h2>
+          <div class="sub">Pilih jumlah penerima paket Anda.</div>
+
+          <div class="choice-list">
+            <button class="choice-card" id="btn-pilih-satu">
+              <div class="icon">📦</div>
+              <div>
+                <div class="title">Kirim 1 Paket (Single)</div>
+                <div class="sub">Isi formulir cepat untuk 1 penerima.</div>
+              </div>
+            </button>
+
+            <button class="choice-card" id="btn-pilih-banyak">
+              <div class="icon">📑</div>
+              <div>
+                <div class="title">Input Banyak Paket (Bulk)</div>
+                <div class="sub">Kirim ke banyak penerima sekaligus (1 - 10 paket).</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: FORM KIRIM PAKET (SINGLE) ---- -->
+      <div class="view hidden" id="view-kirim">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="kirim-pilihan">← Kembali</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>Form Kirim 1 Paket</h2>
+          <div class="sub">Diskon 20% otomatis berlaku.</div>
+
+          <div class="section-label">Pengirim</div>
+          <div class="field-mobile">
+            <label>Nama Pengirim <span class="req">*</span></label>
+            <input type="text" id="kp-nama-pengirim" placeholder="Nama pengirim / toko">
+            <div class="err-msg" id="err-kp-nama-pengirim">Wajib diisi.</div>
+          </div>
+          <div class="field-mobile">
+            <label>No HP Pengirim <span class="req">*</span></label>
+            <input type="tel" id="kp-hp-pengirim" placeholder="08xxxxxxxxxx" inputmode="numeric">
+            <div class="err-msg" id="err-kp-hp-pengirim">Nomor HP tidak valid (min 10 digit, diawali 08).</div>
+          </div>
+
+          <div class="section-label">Penerima</div>
+          <div class="field-mobile">
+            <label>Nama Penerima <span class="req">*</span></label>
+            <input type="text" id="kp-nama-penerima" placeholder="Nama penerima">
+            <div class="err-msg" id="err-kp-nama-penerima">Wajib diisi.</div>
+          </div>
+          <div class="field-mobile">
+            <label>No HP Penerima <span class="req">*</span></label>
+            <input type="tel" id="kp-hp-penerima" placeholder="08xxxxxxxxxx" inputmode="numeric">
+            <div class="err-msg" id="err-kp-hp-penerima">Nomor HP tidak valid.</div>
+          </div>
+
+          <!-- SMART REGION AUTOCOMPLETE SEARCH FIELD -->
+          <div class="field-mobile" style="position:relative;">
+            <label>⚡ Cari Kota / Kecamatan Otomatis <span style="color:var(--amber); font-size:11px;">(Seluruh Indonesia)</span></label>
+            <input type="text" id="kp-region-search" placeholder="Ketik: Kelayan, Martapura, Surabaya, Jakarta..." autocomplete="off">
+            <div id="kp-region-dropdown" class="region-dropdown hidden"></div>
+          </div>
+
+          <div class="field-mobile">
+            <label>Alamat Lengkap <span class="req">*</span></label>
+            <input type="text" id="kp-alamat" placeholder="Jalan, Gang, atau Blok">
+            <div class="err-msg" id="err-kp-alamat">Wajib diisi.</div>
+          </div>
+
+          <div class="grid-3">
+            <div class="field-mobile">
+              <label>No Rumah <span class="req">*</span></label>
+              <input type="text" id="kp-no-rumah" placeholder="12" inputmode="numeric">
+              <div class="err-msg" id="err-kp-no-rumah">Wajib.</div>
+            </div>
+            <div class="field-mobile">
+              <label>RT <span class="req">*</span></label>
+              <input type="text" id="kp-rt" placeholder="003" inputmode="numeric">
+              <div class="err-msg" id="err-kp-rt">Wajib.</div>
+            </div>
+            <div class="field-mobile">
+              <label>RW <span class="req">*</span></label>
+              <input type="text" id="kp-rw" placeholder="005" inputmode="numeric">
+              <div class="err-msg" id="err-kp-rw">Wajib.</div>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field-mobile">
+              <label>Kecamatan <span class="req">*</span></label>
+              <input type="text" id="kp-kecamatan" placeholder="Kecamatan">
+              <div class="err-msg" id="err-kp-kecamatan">Wajib.</div>
+            </div>
+            <div class="field-mobile">
+              <label>Kota/Kab <span class="req">*</span></label>
+              <input type="text" id="kp-kota" placeholder="Kota/Kab">
+              <div class="err-msg" id="err-kp-kota">Wajib.</div>
+            </div>
+          </div>
+
+          <div class="field-mobile">
+            <label>Provinsi <span class="req">*</span></label>
+            <input type="text" id="kp-provinsi" placeholder="Provinsi">
+            <div class="err-msg" id="err-kp-provinsi">Wajib diisi.</div>
+          </div>
+
+          <div class="section-label">Barang &amp; Ongkir</div>
+          <div class="field-mobile">
+            <label>Jenis / Isi Barang <span class="req">*</span></label>
+            <input type="text" id="kp-jenis-barang" list="jenis-barang-list" placeholder="Dokumen, Pakaian, Makanan, dsb.">
+            <datalist id="jenis-barang-list">
+              <option value="Dokumen">
+              <option value="Pakaian">
+              <option value="Makanan">
+              <option value="Elektronik">
+              <option value="Kosmetik">
+              <option value="Barang Lainnya">
+            </datalist>
+            <div class="err-msg" id="err-kp-jenis-barang">Wajib diisi.</div>
+          </div>
+
+          <div class="banner-alert">
+            ⚠️ <strong>Perhatian:</strong> Paket Madu, Ikan Kering, Sarang Walet, atau Tumbuhan tujuan luar Kalsel (selain Kalteng) wajib karantina.
+          </div>
+
+          <div class="field-mobile">
+            <label>Metode Pembayaran Ongkir <span class="req">*</span></label>
+            <div class="radio-group" id="kp-pembayaran-row">
+              <label class="radio-card" data-radio-opt>
+                <input type="radio" name="kp-pembayaran" value="DFOD">
+                <div>
+                  <span>DFOD</span>
+                  <small>Bayar di Penerima</small>
+                </div>
+              </label>
+              <label class="radio-card" data-radio-opt>
+                <input type="radio" name="kp-pembayaran" value="Cash">
+                <div>
+                  <span>Cash</span>
+                  <small>Bayar di Tempat</small>
+                </div>
+              </label>
+            </div>
+            <div class="err-msg" id="err-kp-pembayaran">Pilih metode pembayaran.</div>
+          </div>
+
+          <button class="btn btn-primary" id="kp-submit" style="margin-top:10px;">
+            <span>Preview Pesan WA</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: PREVIEW KIRIM PAKET (SINGLE) ---- -->
+      <div class="view hidden" id="view-preview-kirim">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="kirim">← Edit Form</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>Preview Pesan WhatsApp</h2>
+          <div class="sub">Periksa kelengkapan sebelum dikirim.</div>
+
+          <ul class="checklist-mobile" id="kp-checklist"></ul>
+
+          <div class="preview-wrapper">
+            <button class="btn-copy-box" id="btn-copy-kp">Salin Pesan</button>
+            <div class="preview-box" id="kp-preview-text"></div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button class="btn btn-wa" data-admin="imam" data-flow="kirim">
+              <div class="wa-name">
+                <span>Admin Imam (+62 887-4353-77117)</span>
+                <span class="badge-duty-live" id="preview-badge-imam-kp">Fast Response</span>
+              </div>
+              <span>Kirim WA →</span>
+            </button>
+            <button class="btn btn-wa" data-admin="rahma" data-flow="kirim">
+              <div class="wa-name">
+                <span>Admin Rahma (+62 5252-743-530)</span>
+                <span class="badge-duty-live" id="preview-badge-rahma-kp">Fast Response</span>
+              </div>
+              <span>Kirim WA →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: FORM KIRIM BANYAK PAKET (BULK) ---- -->
+      <div class="view hidden" id="view-kirim-banyak">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="kirim-pilihan">← Kembali</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>Input Banyak Paket (Bulk)</h2>
+          <div class="sub">Pilih jumlah penerima (1 - 10 paket).</div>
+
+          <div class="banner-alert">
+            ⚠️ Paket Madu, Ikan Kering, Sarang Walet, atau Tumbuhan tujuan luar Kalsel (selain Kalteng) wajib karantina.
+          </div>
+
+          <div class="section-label">Pengirim</div>
+          <div class="field-mobile">
+            <label>Nama Pengirim <span class="req">*</span></label>
+            <input type="text" id="kb-nama-pengirim" placeholder="Nama pengirim / toko">
+            <div class="err-msg" id="err-kb-nama-pengirim">Wajib diisi.</div>
+          </div>
+          <div class="field-mobile">
+            <label>No HP Pengirim <span class="req">*</span></label>
+            <input type="tel" id="kb-hp-pengirim" placeholder="08xxxxxxxxxx" inputmode="numeric">
+            <div class="err-msg" id="err-kb-hp-pengirim">Nomor HP tidak valid.</div>
+          </div>
+
+          <div class="section-label">Jumlah Paket</div>
+          <div class="field-mobile">
+            <div class="chip-row" id="kb-jumlah-row">
+              <button type="button" class="chip" data-jumlah="1">1</button>
+              <button type="button" class="chip" data-jumlah="2">2</button>
+              <button type="button" class="chip" data-jumlah="3">3</button>
+              <button type="button" class="chip" data-jumlah="4">4</button>
+              <button type="button" class="chip" data-jumlah="5">5</button>
+              <button type="button" class="chip" data-jumlah="6">6</button>
+              <button type="button" class="chip" data-jumlah="7">7</button>
+              <button type="button" class="chip" data-jumlah="8">8</button>
+              <button type="button" class="chip" data-jumlah="9">9</button>
+              <button type="button" class="chip" data-jumlah="10">10</button>
+            </div>
+            <div class="err-msg" id="err-kb-jumlah">Pilih jumlah paket terlebih dahulu.</div>
+          </div>
+
+          <div id="kb-penerima-container"></div>
+
+          <button class="btn btn-primary" id="kb-submit" style="margin-top:10px;">
+            <span>Preview Pesan Bulk WA</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: PREVIEW KIRIM BANYAK PAKET ---- -->
+      <div class="view hidden" id="view-preview-kirim-banyak">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="kirim-banyak">← Edit Form</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>Preview Pesan Banyak Paket</h2>
+          <div class="sub">Periksa data penerima sebelum dikirim.</div>
+
+          <ul class="checklist-mobile" id="kb-checklist"></ul>
+
+          <div class="preview-wrapper">
+            <button class="btn-copy-box" id="btn-copy-kb">Salin Pesan</button>
+            <div class="preview-box" id="kb-preview-text"></div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button class="btn btn-wa" data-admin="imam" data-flow="kirim-banyak">
+              <div class="wa-name">
+                <span>Admin Imam (+62 887-4353-77117)</span>
+                <span class="badge-duty-live" id="preview-badge-imam-kb">Fast Response</span>
+              </div>
+              <span>Kirim WA →</span>
+            </button>
+            <button class="btn btn-wa" data-admin="rahma" data-flow="kirim-banyak">
+              <div class="wa-name">
+                <span>Admin Rahma (+62 5252-743-530)</span>
+                <span class="badge-duty-live" id="preview-badge-rahma-kb">Fast Response</span>
+              </div>
+              <span>Kirim WA →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: GABUNG GROUP SELLER ---- -->
+      <div class="view hidden" id="view-gabung">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="menu">← Kembali</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>Gabung Group Seller J&amp;T</h2>
+          <div class="sub">Dapatkan promo, diskon khusus seller &amp; layanan prioritas.</div>
+
+          <div class="field-mobile">
+            <label>Nama Toko <span class="req">*</span></label>
+            <input type="text" id="gs-nama-toko" placeholder="Nama toko online Anda">
+            <div class="err-msg" id="err-gs-nama-toko">Wajib diisi.</div>
+          </div>
+
+          <div class="field-mobile">
+            <label>Pengiriman Terakhir Dari <span class="req">*</span></label>
+            <div class="radio-group" id="gs-pengiriman-row">
+              <label class="radio-card" data-radio-opt>
+                <input type="radio" name="gs-pengiriman" value="Marketplace">
+                <div>
+                  <span>Marketplace</span>
+                  <small>Shopee/TikTok/Tokped</small>
+                </div>
+              </label>
+              <label class="radio-card" data-radio-opt>
+                <input type="radio" name="gs-pengiriman" value="Reguler">
+                <div>
+                  <span>Reguler</span>
+                  <small>Non-Marketplace</small>
+                </div>
+              </label>
+            </div>
+            <div class="err-msg" id="err-gs-pengiriman">Pilih jenis pengiriman.</div>
+          </div>
+
+          <div class="field-mobile">
+            <label>No Resi Pengiriman Terakhir <span class="req">*</span></label>
+            <input type="text" id="gs-no-resi" placeholder="Nomor resi J&T terakhir Anda">
+            <div class="err-msg" id="err-gs-no-resi">No resi wajib diisi.</div>
+          </div>
+
+          <button class="btn btn-primary" id="gs-submit" style="margin-top:10px;">
+            <span>Preview Pesan WA</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: PREVIEW GABUNG GROUP SELLER ---- -->
+      <div class="view hidden" id="view-preview-gabung">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="gabung">← Edit Form</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>Preview Group Seller</h2>
+          <div class="sub">Periksa data toko Anda.</div>
+
+          <ul class="checklist-mobile" id="gs-checklist"></ul>
+
+          <div class="preview-wrapper">
+            <button class="btn-copy-box" id="btn-copy-gs">Salin Pesan</button>
+            <div class="preview-box" id="gs-preview-text"></div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button class="btn btn-wa" data-admin="imam" data-flow="gabung">
+              <div class="wa-name">
+                <span>Admin Imam (+62 887-4353-77117)</span>
+                <span class="badge-duty-live" id="preview-badge-imam-gs">Fast Response</span>
+              </div>
+              <span>Kirim WA →</span>
+            </button>
+            <button class="btn btn-wa" data-admin="rahma" data-flow="gabung">
+              <div class="wa-name">
+                <span>Admin Rahma (+62 5252-743-530)</span>
+                <span class="badge-duty-live" id="preview-badge-rahma-gs">Fast Response</span>
+              </div>
+              <span>Kirim WA →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: PENGAMBILAN PAKET ---- -->
+      <div class="view hidden" id="view-pengambilan">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="menu">← Kembali</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>Ambil Paket / Pick-up</h2>
+          <div class="sub">Formulir konfirmasi pengambilan paket / returan.</div>
+
+          <div class="field-mobile">
+            <label>Jenis Permintaan <span class="req">*</span></label>
+            <div class="radio-group" id="pr-jenis-row">
+              <label class="radio-card" data-radio-opt>
+                <input type="radio" name="pr-jenis" value="Pengambilan Paket">
+                <div>
+                  <span>Pengambilan Paket</span>
+                  <small>Pick-up Paket Regular</small>
+                </div>
+              </label>
+              <label class="radio-card" data-radio-opt>
+                <input type="radio" name="pr-jenis" value="Pengambilan Returan">
+                <div>
+                  <span>Pengambilan Returan</span>
+                  <small>Pick-up Paket Retur</small>
+                </div>
+              </label>
+            </div>
+            <div class="err-msg" id="err-pr-jenis">Pilih salah satu jenis.</div>
+          </div>
+
+          <div class="field-mobile hidden" id="pr-returan-extra">
+            <label>Jadwal Pengambilan Returan <span class="req">*</span></label>
+            <div class="radio-group" id="pr-waktu-row">
+              <label class="radio-card" data-radio-opt>
+                <input type="radio" name="pr-waktu-pilihan" value="sekarang">
+                <span>Sekarang (Langsung)</span>
+              </label>
+              <label class="radio-card" data-radio-opt>
+                <input type="radio" name="pr-waktu-pilihan" value="jadwal">
+                <span>Tentukan Waktu</span>
+              </label>
+            </div>
+            <div class="err-msg" id="err-pr-waktu">Pilih waktu pengambilan.</div>
+
+            <div class="hidden grid-2" id="pr-jadwal-fields" style="margin-top:10px;">
+              <div>
+                <label style="font-size:11.5px; font-weight:700;">Tanggal</label>
+                <input type="date" id="pr-tanggal">
+              </div>
+              <div>
+                <label style="font-size:11.5px; font-weight:700;">Pukul</label>
+                <input type="time" id="pr-jam">
+              </div>
+            </div>
+            <div class="err-msg" id="err-pr-jadwal">Isi tanggal dan pukul.</div>
+
+            <div style="margin-top:12px;">
+              <label style="font-size:11.5px; font-weight:700;">Nama Toko <span style="color:var(--text-muted); font-weight:400;">(opsional)</span></label>
+              <input type="text" id="pr-nama-toko" placeholder="Nama toko Anda">
+            </div>
+          </div>
+
+          <div class="field-mobile">
+            <label>Daftar Nomor Resi <span class="req">*</span></label>
+            <textarea id="pr-no-resi" placeholder="Masukkan nomor resi, satu per baris&#10;Contoh:&#10;JT0012345678&#10;JT0012345679"></textarea>
+            <div class="hint" id="pr-resi-hint">Minimal 1 resi, maksimal 15 resi.</div>
+            <div class="err-msg" id="err-pr-no-resi">Masukkan minimal 1 dan maksimal 15 no resi.</div>
+          </div>
+
+          <button class="btn btn-primary" id="pr-submit" style="margin-top:10px;">
+            <span>Preview Pesan WA</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: PREVIEW PENGAMBILAN PAKET ---- -->
+      <div class="view hidden" id="view-preview-pengambilan">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="pengambilan">← Edit Form</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>Preview Ambil Paket</h2>
+          <div class="sub">Periksa rincian resi sebelum dikirim.</div>
+
+          <ul class="checklist-mobile" id="pr-checklist"></ul>
+
+          <div class="preview-wrapper">
+            <button class="btn-copy-box" id="btn-copy-pr">Salin Pesan</button>
+            <div class="preview-box" id="pr-preview-text"></div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button class="btn btn-wa" data-admin="imam" data-flow="pengambilan">
+              <div class="wa-name">
+                <span>Admin Imam (+62 887-4353-77117)</span>
+                <span class="badge-duty-live" id="preview-badge-imam-pr">Fast Response</span>
+              </div>
+              <span>Kirim WA →</span>
+            </button>
+            <button class="btn btn-wa" data-admin="rahma" data-flow="pengambilan">
+              <div class="wa-name">
+                <span>Admin Rahma (+62 5252-743-530)</span>
+                <span class="badge-duty-live" id="preview-badge-rahma-pr">Fast Response</span>
+              </div>
+              <span>Kirim WA →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: SPRINTER - PILIH AREA ---- -->
+      <div class="view hidden" id="view-sprinter-area">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="menu">← Kembali</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>🚚 Kurir Sprinter Area Mu</h2>
+          <div class="sub">Pilih lokasi Anda untuk menghubungi kurir yang bertugas.</div>
+
+          <div class="choice-list" id="sprinter-area-list">
+            <button class="choice-card" data-area-id="1">
+              <div class="icon">📍</div>
+              <div>
+                <div class="title">Jalan Kelayan B</div>
+                <div class="sub">Masjid Muhammadiyah, Gg. Gembira, Cempaka, Ar-Raudhah, dll.</div>
+              </div>
+            </button>
+            
+            <button class="choice-card" data-area-id="2">
+              <div class="icon">📍</div>
+              <div>
+                <div class="title">Gerilya &amp; Tatah Bangkal</div>
+                <div class="sub">Gerilya, Simpang Limau, Tatah Bangkal, &amp; Lingkar Dalam.</div>
+              </div>
+            </button>
+            
+            <button class="choice-card" data-area-id="3">
+              <div class="icon">📍</div>
+              <div>
+                <div class="title">Mantuil Muka &amp; Jalan Tol</div>
+                <div class="sub">Water Boom Alfin s/d Jalan Tol &amp; Gubernur Soebarjo.</div>
+              </div>
+            </button>
+            
+            <button class="choice-card" data-area-id="4">
+              <div class="icon">📍</div>
+              <div>
+                <div class="title">Ks Tubun &amp; Pekauman</div>
+                <div class="sub">Ks Tubun, Pekauman, &amp; RS Sultan Suriansyah.</div>
+              </div>
+            </button>
+            
+            <button class="choice-card" data-area-id="5">
+              <div class="icon">📍</div>
+              <div>
+                <div class="title">Mantuil Belakang &amp; Bromo</div>
+                <div class="sub">Jembatan Basirih s/d PT Meranti &amp; Pulau Bromo.</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: SPRINTER - DAFTAR KURIR ---- -->
+      <div class="view hidden" id="view-sprinter-kurir">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="sprinter-area">← Pilih Area Lain</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>Daftar Kurir Sprinter</h2>
+          <div class="sub" id="sprinter-area-label">Area pengiriman</div>
+          <div class="choice-list" id="sprinter-kurir-list"></div>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: SPRINTER - FORM HUBUNGI KURIR ---- -->
+      <div class="view hidden" id="view-sprinter-form">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="sprinter-kurir">← Pilih Kurir Lain</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>Hubungi Kurir WA</h2>
+          <div class="sub" id="sprinter-kurir-label">Informasi Kurir</div>
+
+          <div class="field-mobile">
+            <label>Nama Customer / Toko <span class="req">*</span></label>
+            <input type="text" id="sp-nama-customer" placeholder="Nama Anda">
+            <div class="err-msg" id="err-sp-nama-customer">Wajib diisi.</div>
+          </div>
+          <div class="field-mobile">
+            <label>No Resi Paket <span class="req">*</span></label>
+            <input type="text" id="sp-no-resi" placeholder="Nomor resi paket">
+            <div class="err-msg" id="err-sp-no-resi">Wajib diisi.</div>
+          </div>
+          <div class="field-mobile">
+            <label>Pertanyaan ke Kurir <span class="req">*</span></label>
+            <textarea id="sp-pertanyaan" placeholder="Contoh: Apakah paket sudah bisa diantar sore ini?"></textarea>
+            <div class="err-msg" id="err-sp-pertanyaan">Wajib diisi.</div>
+          </div>
+
+          <button class="btn btn-primary" id="sp-submit" style="margin-top:10px;">
+            <span>Kirim Ke WA Kurir</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ---- VIEW: PENGATURAN / INFORMASI ---- -->
+      <div class="view hidden" id="view-pengaturan">
+        <div class="top-view-bar">
+          <button class="btn-back" data-back="menu">← Kembali</button>
+        </div>
+        
+        <div class="card-form">
+          <h2>Tentang J&amp;T KS_TUBUN</h2>
+          <div class="sub">Drop Point Resmi J&amp;T Express Banjarmasin. Layanan cepat, aman, &amp; terpercaya.</div>
+        </div>
+
+        <div class="card-form">
+          <h2>Kontak Admin &amp; Shift Duty</h2>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:10px;">
+            <a class="btn btn-wa" href="https://wa.me/62887435377117" target="_blank" rel="noopener">
+              <div class="wa-name">
+                <span>Admin Imam (+62 887-4353-77117)</span>
+                <span class="badge-duty-live" id="badge-imam-settings">Info Shift</span>
+              </div>
+              <span>WA →</span>
+            </a>
+            <a class="btn btn-wa" href="https://wa.me/625252743530" target="_blank" rel="noopener">
+              <div class="wa-name">
+                <span>Admin Rahma (+62 5252-743-530)</span>
+                <span class="badge-duty-live" id="badge-rahma-settings">Info Shift</span>
+              </div>
+              <span>WA →</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card-form">
+          <h2>Jam Operasional &amp; Ketentuan Shift</h2>
+          <ul class="hours-list">
+            <li><span>Shift 1</span><span>08.00 - 16.30 WITA</span></li>
+            <li><span>Shift 2</span><span>13.00 - 21.00 WITA</span></li>
+            <li><span>Rotasi Shift</span><span>Setiap Senin Berubah</span></li>
+            <li><span>Hari Jumat</span><span>Shift 2 Selamanya Admin Imam</span></li>
+            <li><span>Hari Kamis</span><span>Admin Imam Libur (Shift 2 Rahma)</span></li>
+            <li><span>Hari Sabtu</span><span>Admin Rahma Libur (Shift 2 Imam)</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- FIXED MOBILE BOTTOM NAVIGATION BAR -->
+    <nav class="mobile-bottom-nav">
+      <div class="nav-inner">
+        <button class="nav-tab active" data-nav="menu">
+          <span class="icon">🏠</span>
+          <span>Home</span>
+        </button>
+        <button class="nav-tab" data-nav="kirim">
+          <span class="icon">📦</span>
+          <span>Kirim</span>
+        </button>
+        <button class="nav-tab" data-nav="pengambilan">
+          <span class="icon">📥</span>
+          <span>Ambil Paket</span>
+        </button>
+        <button class="nav-tab" data-nav="gabung">
+          <span class="icon">🤝</span>
+          <span>Seller</span>
+        </button>
+        <button class="nav-tab" data-nav="sprinter">
+          <span class="icon">🚚</span>
+          <span>Kurir</span>
+        </button>
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- Toast Notification Mobile -->
+  <div class="toast-mobile" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------- INDONESIAN REGION DATABASE & AUTOCOMPLETE ---------------- */
+  var REGION_DB = [
+    // --- KALIMANTAN SELATAN (KALSEL) ---
+    { kec: "Banjarmasin Selatan", kota: "Kota Banjarmasin", prov: "Kalimantan Selatan", area: "Kelayan, Pemurus, Mantuil, Basirih, Tanjung Pagar" },
+    { kec: "Banjarmasin Barat", kota: "Kota Banjarmasin", prov: "Kalimantan Selatan", area: "Pekauman, Belitung, Telaga Biru, Kuin, Pelambuan" },
+    { kec: "Banjarmasin Timur", kota: "Kota Banjarmasin", prov: "Kalimantan Selatan", area: "Kuripan, Pekapuran, Banua Anyar, Karang Mekar, Sungai Lulut" },
+    { kec: "Banjarmasin Utara", kota: "Kota Banjarmasin", prov: "Kalimantan Selatan", area: "Kayu Tangi, Sungai Miai, Surgi Mufti, Antasan Kecil, Alalak" },
+    { kec: "Banjarmasin Tengah", kota: "Kota Banjarmasin", prov: "Kalimantan Selatan", area: "Ks Tubun, Pasar Lama, Kertak Baru, Gadang, Melayu, Seberang Masjid" },
+    
+    { kec: "Landasan Ulin", kota: "Kota Banjarbaru", prov: "Kalimantan Selatan", area: "Syamsudin Noor, Guntung Manggis, Landasan Ulin Barat" },
+    { kec: "Banjarbaru Utara", kota: "Kota Banjarbaru", prov: "Kalimantan Selatan", area: "Loktabat Utara, Mentaos, Komet, Sungai Ulin" },
+    { kec: "Banjarbaru Selatan", kota: "Kota Banjarbaru", prov: "Kalimantan Selatan", area: "Loktabat Selatan, Guntung Paikat, Sungai Besar" },
+    { kec: "Cempaka", kota: "Kota Banjarbaru", prov: "Kalimantan Selatan", area: "Sungai Tiung, Cempaka, Palam, Bangkal" },
+    { kec: "Liang Anggang", kota: "Kota Banjarbaru", prov: "Kalimantan Selatan", area: "Landasan Ulin Selatan, Landasan Ulin Utara" },
+
+    { kec: "Kertak Hanyar", kota: "Kab. Banjar", prov: "Kalimantan Selatan", area: "Manarap, Pemurus Dalam, Simpang Empat, Pasar Kamis" },
+    { kec: "Gambut", kota: "Kab. Banjar", prov: "Kalimantan Selatan", area: "Gambut Barat, Kayu Bawang, Guntung Papuyu" },
+    { kec: "Martapura", kota: "Kab. Banjar", prov: "Kalimantan Selatan", area: "Sekumpul, Cindai Alus, Keraton, Pasayangan, Jawa" },
+    { kec: "Martapura Barat", kota: "Kab. Banjar", prov: "Kalimantan Selatan", area: "Penggalaman, Tangkas, Teluk Selong" },
+    { kec: "Martapura Timur", kota: "Kab. Banjar", prov: "Kalimantan Selatan", area: "Pekauman, Mekar, Tambak Anyar" },
+    { kec: "Sungai Tabuk", kota: "Kab. Banjar", prov: "Kalimantan Selatan", area: "Sungai Lulut, Gudang Hirang, Abumbun Jaya" },
+    { kec: "Karang Intan", kota: "Kab. Banjar", prov: "Kalimantan Selatan", area: "Mandiangin, Awang Bangkal, Lihung" },
+    { kec: "Astambul", kota: "Kab. Banjar", prov: "Kalimantan Selatan", area: "Kelampayan, Danau Salak, Pingaran" },
+    { kec: "Simpang Empat", kota: "Kab. Banjar", prov: "Kalimantan Selatan", area: "Cabu, Batu Balian, Lok Besar" },
+    { kec: "Pengaron", kota: "Kab. Banjar", prov: "Kalimantan Selatan", area: "Benteng, Lok Tunggul, Kiewe" },
+    { kec: "Mataraman", kota: "Kab. Banjar", prov: "Kalimantan Selatan", area: "Bawahan Selan, Mataraman" },
+
+    { kec: "Alalak", kota: "Kab. Barito Kuala", prov: "Kalimantan Selatan", area: "Handil Bakti, Berangas, Semangat Dalam, Sungai Pitap" },
+    { kec: "Marabahan", kota: "Kab. Barito Kuala", prov: "Kalimantan Selatan", area: "Ulu Benteng, Marabahan Kota, Bali" },
+    { kec: "Anjir Pasar", kota: "Kab. Barito Kuala", prov: "Kalimantan Selatan", area: "Anjir Pasar Kota, Banyiur, Pandan Pahala" },
+    { kec: "Anjir Muara", kota: "Kab. Barito Kuala", prov: "Kalimantan Selatan", area: "Anjir Muara Kota, Marabahan Baru" },
+    { kec: "Mandastana", kota: "Kab. Barito Kuala", prov: "Kalimantan Selatan", area: "Karang Bunga, Puntik Tengah" },
+
+    { kec: "Pelaihari", kota: "Kab. Tanah Laut", prov: "Kalimantan Selatan", area: "Angsau, Sarang Halang, Pabahanan" },
+    { kec: "Bati-Bati", kota: "Kab. Tanah Laut", prov: "Kalimantan Selatan", area: "Nusa, Padang, Benua Raya" },
+    { kec: "Kurau", kota: "Kab. Tanah Laut", prov: "Kalimantan Selatan", area: "Tambak Karya, Handil Negara, Raden" },
+    { kec: "Takisung", kota: "Kab. Tanah Laut", prov: "Kalimantan Selatan", area: "Pantai Takisung, Gunung Makmur" },
+    { kec: "Jorong", kota: "Kab. Tanah Laut", prov: "Kalimantan Selatan", area: "Jorong Kota, Asam Asam, Swarangan" },
+    { kec: "Kintap", kota: "Kab. Tanah Laut", prov: "Kalimantan Selatan", area: "Kintap Kota, Bukit Mulia, Pasir Putih" },
+
+    { kec: "Rantau", kota: "Kab. Tapin", prov: "Kalimantan Selatan", area: "Rantau Kanan, Rantau Kiwa, Kupang" },
+    { kec: "Tapin Utara", kota: "Kab. Tapin", prov: "Kalimantan Selatan", area: "Kupang, Rangda Maling" },
+    { kec: "Tapin Selatan", kota: "Kab. Tapin", prov: "Kalimantan Selatan", area: "Tambaruntung, Suato Tatakan" },
+    { kec: "Candi Laras Utara", kota: "Kab. Tapin", prov: "Kalimantan Selatan", area: "Margasari, Keladan" },
+
+    { kec: "Kandangan", kota: "Kab. Hulu Sungai Selatan", prov: "Kalimantan Selatan", area: "Kandangan Kota, Tibung Raya" },
+    { kec: "Angkinang", kota: "Kab. Hulu Sungai Selatan", prov: "Kalimantan Selatan", area: "Angkinang, Bamban" },
+    { kec: "Loksado", kota: "Kab. Hulu Sungai Selatan", prov: "Kalimantan Selatan", area: "Loksado, Muara Hatip" },
+
+    { kec: "Barabai", kota: "Kab. Hulu Sungai Tengah", prov: "Kalimantan Selatan", area: "Barabai Darat, Barabai Timur, Bukat" },
+    { kec: "Batu Benawa", kota: "Kab. Hulu Sungai Tengah", prov: "Kalimantan Selatan", area: "Pagat, Aluan Besar" },
+
+    { kec: "Amuntai Tengah", kota: "Kab. Hulu Sungai Utara", prov: "Kalimantan Selatan", area: "Amuntai Tengah, Antasari, Murung Sari" },
+    { kec: "Amuntai Utara", kota: "Kab. Hulu Sungai Utara", prov: "Kalimantan Selatan", area: "Amuntai Utara, Pakacangan" },
+    { kec: "Amuntai Selatan", kota: "Kab. Hulu Sungai Utara", prov: "Kalimantan Selatan", area: "Amuntai Selatan, Telaga Silaba" },
+
+    { kec: "Tanjung", kota: "Kab. Tabalong", prov: "Kalimantan Selatan", area: "Tanjung Kota, Hikun, Mabuun" },
+    { kec: "Murung Pudak", kota: "Kab. Tabalong", prov: "Kalimantan Selatan", area: "Belimbing, Pembataan, Mabuun" },
+    { kec: "Kelua", kota: "Kab. Tabalong", prov: "Kalimantan Selatan", area: "Kelua, Pudak Sirat" },
+
+    { kec: "Batulicin", kota: "Kab. Tanah Bumbu", prov: "Kalimantan Selatan", area: "Batulicin Kota, Kampung Baru" },
+    { kec: "Simpang Empat", kota: "Kab. Tanah Bumbu", prov: "Kalimantan Selatan", area: "Bareq, Sarigading, Sejahtera" },
+    { kec: "Satui", kota: "Kab. Tanah Bumbu", prov: "Kalimantan Selatan", area: "Sungai Danau, Makmur Mulia" },
+
+    { kec: "Pulau Laut Utara", kota: "Kab. Kotabaru", prov: "Kalimantan Selatan", area: "Kotabaru Central, Stagen, Dirgahayu" },
+    { kec: "Pulau Laut Selatan", kota: "Kab. Kotabaru", prov: "Kalimantan Selatan", area: "Tanjung Seloka, Teluk Sirih" },
+
+    // --- KALIMANTAN TENGAH ---
+    { kec: "Jekan Raya", kota: "Kota Palangka Raya", prov: "Kalimantan Tengah", area: "Menteng, Palangka, Bukit Tunggal" },
+    { kec: "Pahandut", kota: "Kota Palangka Raya", prov: "Kalimantan Tengah", area: "Pahandut Kota, Langkai, Panarung" },
+    { kec: "Bukit Batu", kota: "Kota Palangka Raya", prov: "Kalimantan Tengah", area: "Tangiling, Marang" },
+
+    { kec: "Baamang", kota: "Kota Sampit (Kotim)", prov: "Kalimantan Tengah", area: "Baamang Tengah, Baamang Barat" },
+    { kec: "Ketapang", kota: "Kota Sampit (Kotim)", prov: "Kalimantan Tengah", area: "Ketapang, Mentawa Baru" },
+
+    { kec: "Arut Selatan", kota: "Pangkalan Bun (Kobar)", prov: "Kalimantan Tengah", area: "Madurejo, Sidorejo, Baru" },
+    { kec: "Kumai", kota: "Pangkalan Bun (Kobar)", prov: "Kalimantan Tengah", area: "Pelabuhan Kumai, Sungai Kapitan" },
+
+    { kec: "Kuala Kapuas / Selat", kota: "Kab. Kapuas", prov: "Kalimantan Tengah", area: "Selat Dalam, Selat Tengah, Selat Hilir" },
+    { kec: "Dusun Selatan (Buntok)", kota: "Kab. Barito Selatan", prov: "Kalimantan Tengah", area: "Buntok Kota, Hilir Sper" },
+    { kec: "Muara Teweh", kota: "Kab. Barito Utara", prov: "Kalimantan Tengah", area: "Lanjas, Melayu" },
+
+    // --- KALIMANTAN TIMUR & UTARA ---
+    { kec: "Balikpapan Selatan", kota: "Kota Balikpapan", prov: "Kalimantan Timur", area: "Sepinggan, Damai, Gunung Bahagia" },
+    { kec: "Balikpapan Utara", kota: "Kota Balikpapan", prov: "Kalimantan Timur", area: "Batu Ampar, Karang Joang, Muara Rapak" },
+    { kec: "Balikpapan Kota", kota: "Kota Balikpapan", prov: "Kalimantan Timur", area: "Klandasan Ulu, Klandasan Ilir, Prapatan" },
+    { kec: "Balikpapan Barat", kota: "Kota Balikpapan", prov: "Kalimantan Timur", area: "Baru Tengah, Baru Ulu" },
+
+    { kec: "Samarinda Ulu", kota: "Kota Samarinda", prov: "Kalimantan Timur", area: "Air Putih, Teluk Lerong, Juanda" },
+    { kec: "Samarinda Ilir", kota: "Kota Samarinda", prov: "Kalimantan Timur", area: "Pelita, Sidomulyo, Sungai Dama" },
+    { kec: "Samarinda Seberang", kota: "Kota Samarinda", prov: "Kalimantan Timur", area: "Baqa, Gunung Panjang" },
+
+    { kec: "Tenggarong", kota: "Kab. Kutai Kartanegara", prov: "Kalimantan Timur", area: "Tenggarong Kota, Timbau" },
+    { kec: "Penajam", kota: "Kab. Penajam Paser Utara", prov: "Kalimantan Timur", area: "Nipah-Nipah, Petung, Penajam" },
+    { kec: "Bontang Utara", kota: "Kota Bontang", prov: "Kalimantan Timur", area: "Api-Api, Bontang Baru" },
+    { kec: "Sangatta Utara", kota: "Kab. Kutai Timur", prov: "Kalimantan Timur", area: "Teluk Lingga, Swarga Bara" },
+    { kec: "Tanjung Redeb", kota: "Kab. Berau", prov: "Kalimantan Timur", area: "Berau Kota, Bugis" },
+    { kec: "Tarakan Barat", kota: "Kota Tarakan", prov: "Kalimantan Utara", area: "Karang Anyar, Karang Harapan" },
+    { kec: "Tanjung Selor", kota: "Kab. Bulungan", prov: "Kalimantan Utara", area: "Tanjung Selor Hilir" },
+
+    // --- KALIMANTAN BARAT ---
+    { kec: "Pontianak Kota", kota: "Kota Pontianak", prov: "Kalimantan Barat", area: "Darat Sekip, Tengah" },
+    { kec: "Pontianak Selatan", kota: "Kota Pontianak", prov: "Kalimantan Barat", area: "Benua Melayu, Parit Tokaya" },
+    { kec: "Singkawang Barat", kota: "Kota Singkawang", prov: "Kalimantan Barat", area: "Pasiran, Melayu" },
+
+    // --- DKI JAKARTA ---
+    { kec: "Gambir", kota: "Kota Jakarta Pusat", prov: "DKI Jakarta", area: "Gambir, Cideng, Petojo, Duri Pulo" },
+    { kec: "Tanah Abang", kota: "Kota Jakarta Pusat", prov: "DKI Jakarta", area: "Bendungan Hilir, Karet Tengsin, Kebon Kacang" },
+    { kec: "Menteng", kota: "Kota Jakarta Pusat", prov: "DKI Jakarta", area: "Cikini, Gondangdia, Pegangsaan" },
+    { kec: "Senen", kota: "Kota Jakarta Pusat", prov: "DKI Jakarta", area: "Kwitang, Kenari, Paseban" },
+
+    { kec: "Kebayoran Baru", kota: "Kota Jakarta Selatan", prov: "DKI Jakarta", area: "Senayan, Gandaria, Blok M, Cipete" },
+    { kec: "Kebayoran Lama", kota: "Kota Jakarta Selatan", prov: "DKI Jakarta", area: "Pondok Pinang, Grogol Selatan" },
+    { kec: "Cilandak", kota: "Kota Jakarta Selatan", prov: "DKI Jakarta", area: "Fatmawati, Pondok Labu, Lebak Bulus" },
+    { kec: "Tebet", kota: "Kota Jakarta Selatan", prov: "DKI Jakarta", area: "Tebet Barat, Tebet Timur, Manggarai" },
+    { kec: "Setiabudi", kota: "Kota Jakarta Selatan", prov: "DKI Jakarta", area: "Kuningan, Karet Semanggi, Menteng Atas" },
+    { kec: "Pasar Minggu", kota: "Kota Jakarta Selatan", prov: "DKI Jakarta", area: "Ragunan, Pejaten, Cilandak Timur" },
+
+    { kec: "Kembangan", kota: "Kota Jakarta Barat", prov: "DKI Jakarta", area: "Puri Indah, Meruya, Srengseng" },
+    { kec: "Kebon Jeruk", kota: "Kota Jakarta Barat", prov: "DKI Jakarta", area: "Kedoya, Duri Kepa, Sukabumi" },
+    { kec: "Cengkareng", kota: "Kota Jakarta Barat", prov: "DKI Jakarta", area: "Rawa Buaya, Duri Kosambi, Cengkareng" },
+
+    { kec: "Kelapa Gading", kota: "Kota Jakarta Utara", prov: "DKI Jakarta", area: "Kelapa Gading Timur, Pegangsaan Dua" },
+    { kec: "Tanjung Priok", kota: "Kota Jakarta Utara", prov: "DKI Jakarta", area: "Sunter, Warakas, Kebon Bawang" },
+    { kec: "Penjaringan", kota: "Kota Jakarta Utara", prov: "DKI Jakarta", area: "PIK Pantai Indah Kapuk, Pluit, Muara Karang" },
+
+    { kec: "Jatinegara", kota: "Kota Jakarta Timur", prov: "DKI Jakarta", area: "Kampung Melayu, Bidara China, Cipinang" },
+    { kec: "Duren Sawit", kota: "Kota Jakarta Timur", prov: "DKI Jakarta", area: "Pondok Bambu, Pondok Kelapa" },
+
+    // --- JAWA BARAT & BANTEN ---
+    { kec: "Tangerang Kota", kota: "Kota Tangerang", prov: "Banten", area: "Cikokol, Karawaci, Batuceper" },
+    { kec: "Serpong / BSD", kota: "Kota Tangerang Selatan", prov: "Banten", area: "BSD City, Serpong, Bintaro, Alam Sutera" },
+    { kec: "Bekasi Barat", kota: "Kota Bekasi", prov: "Jawa Barat", area: "Kranji, Harapan Indah, Kota Baru" },
+    { kec: "Bekasi Selatan", kota: "Kota Bekasi", prov: "Jawa Barat", area: "Pekayon, Jatiwaringin, Galaxy" },
+    { kec: "Depok / Beji", kota: "Kota Depok", prov: "Jawa Barat", area: "Margonda, UI Depok, Kukusan" },
+    { kec: "Bogor Tengah", kota: "Kota Bogor", prov: "Jawa Barat", area: "Kebun Raya, Pajajaran, Sempur" },
+    { kec: "Cibinong", kota: "Kab. Bogor", prov: "Jawa Barat", area: "Pakansari, Nanggewer, Pabuaran" },
+    { kec: "Bandung Coblong", kota: "Kota Bandung", prov: "Jawa Barat", area: "Dago, Dipatiukur, ITB Bandung" },
+    { kec: "Sumur Bandung", kota: "Kota Bandung", prov: "Jawa Barat", area: "Braga, Asia Afrika, Merdeka" },
+    { kec: "Cirebon Kota", kota: "Kota Cirebon", prov: "Jawa Barat", area: "Kejaksan, Lemahwungkuk" },
+    { kec: "Garut Kota", kota: "Kab. Garut", prov: "Jawa Barat", area: "Tarogong, Cipanas Garut" },
+    { kec: "Tasikmalaya Kota", kota: "Kota Tasikmalaya", prov: "Jawa Barat", area: "Cihideung, Cipedes" },
+
+    // --- JAWA TENGAH & DIY ---
+    { kec: "Semarang Tengah", kota: "Kota Semarang", prov: "Jawa Tengah", area: "Simpang Lima, Pandanaran, Pekunden" },
+    { kec: "Banyumanik", kota: "Kota Semarang", prov: "Jawa Tengah", area: "Undip Tembalang, Srondol" },
+    { kec: "Banjarsari", kota: "Kota Surakarta (Solo)", prov: "Jawa Tengah", area: "Manahan, Solo Balapan, Kadipiro" },
+    { kec: "Gondomanan", kota: "Kota Yogyakarta", prov: "DI Yogyakarta", area: "Malioboro, Prawirotaman, Kraton" },
+    { kec: "Depok Sleman", kota: "Kab. Sleman", prov: "DI Yogyakarta", area: "UGM, Gejayan, Seturan, Babarsari" },
+    { kec: "Purwokerto", kota: "Kab. Banyumas", prov: "Jawa Tengah", area: "Purwokerto Timur, Purwokerto Selatan" },
+
+    // --- JAWA TIMUR ---
+    { kec: "Gubeng", kota: "Kota Surabaya", prov: "Jawa Timur", area: "Airlangga, Kertajaya, Unair" },
+    { kec: "Tegalsari", kota: "Kota Surabaya", prov: "Jawa Timur", area: "Tunjungan, Basuki Rahmat, TP" },
+    { kec: "Wonokromo", kota: "Kota Surabaya", prov: "Jawa Timur", area: "Darmo, Royal Plaza, Ngagel" },
+    { kec: "Sukolilo", kota: "Kota Surabaya", prov: "Jawa Timur", area: "ITS Surabaya, Keputih, Gebang" },
+    { kec: "Klojen", kota: "Kota Malang", prov: "Jawa Timur", area: "Ijen, Kayutangan, Stasiun Malang" },
+    { kec: "Lowokwaru", kota: "Kota Malang", prov: "Jawa Timur", area: "UB Brawijaya, Suhat Malang, Dinoyo" },
+    { kec: "Sidoarjo Kota", kota: "Kab. Sidoarjo", prov: "Jawa Timur", area: "Alun-Alun Sidoarjo, Magersari" },
+    { kec: "Waru", kota: "Kab. Sidoarjo", prov: "Jawa Timur", area: "Juanda Airport, Tropodo, Bungurasih" },
+    { kec: "Gresik Kota", kota: "Kab. Gresik", prov: "Jawa Timur", area: "Kebomas, Alun-Alun Gresik" },
+    { kec: "Jember Kota", kota: "Kab. Jember", prov: "Jawa Timur", area: "Patrang, Sumbersari, Unej" },
+    { kec: "Banyuwangi Kota", kota: "Kab. Banyuwangi", prov: "Jawa Timur", area: "Giri, Sobo, Ketapang" },
+
+    // --- SUMATERA ---
+    { kec: "Medan Kota", kota: "Kota Medan", prov: "Sumatera Utara", area: "Kesawan, Maimun, Lapangan Merdeka" },
+    { kec: "Medan Baru", kota: "Kota Medan", prov: "Sumatera Utara", area: "USU Medan, Padang Bulan" },
+    { kec: "Padang Barat", kota: "Kota Padang", prov: "Sumatera Barat", area: "Pantai Padang, Pasar Raya" },
+    { kec: "Tampan", kota: "Kota Pekanbaru", prov: "Riau", area: "Panam, Unri Pekanbaru" },
+    { kec: "Batam Kota", kota: "Kota Batam", prov: "Kepulauan Riau", area: "Nagoya, Batam Center, Pelabuhan" },
+    { kec: "Ilir Timur I", kota: "Kota Palembang", prov: "Sumatera Selatan", area: "Ampera, Jembatan Ampera, Sudirman" },
+    { kec: "Tanjung Karang", kota: "Kota Bandar Lampung", prov: "Lampung", area: "Enggal, Kedaton" },
+    { kec: "Baiturrahman", kota: "Kota Banda Aceh", prov: "Aceh", area: "Masjid Raya Baiturrahman, Peunayong" },
+
+    // --- BALI, NTB, NTT ---
+    { kec: "Denpasar Selatan", kota: "Kota Denpasar", prov: "Bali", area: "Sanur, Renon, Sidakarya" },
+    { kec: "Kuta", kota: "Kab. Badung", prov: "Bali", area: "Legian, Seminyak, Pantai Kuta" },
+    { kec: "Ubud", kota: "Kab. Gianyar", prov: "Bali", area: "Monkey Forest, Campuhan, Tegallalang" },
+    { kec: "Cakranegara", kota: "Kota Mataram (Lombok)", prov: "Nusa Tenggara Barat", area: "Cakra, Sweta" },
+    { kec: "Kupang Kota", kota: "Kota Kupang", prov: "Nusa Tenggara Timur", area: "Oebobo, Kelapa Lima" },
+
+    // --- SULAWESI, MALUKU, PAPUA ---
+    { kec: "Ujung Pandang", kota: "Kota Makassar", prov: "Sulawesi Selatan", area: "Pantai Losari, Somba Opu" },
+    { kec: "Panakkukang", kota: "Kota Makassar", prov: "Sulawesi Selatan", area: "Boulevard, Pettarani, Mall Panakkukang" },
+    { kec: "Wenang", kota: "Kota Manado", prov: "Sulawesi Utara", area: "Taman Kesatuan Bangsa, Manado Town Square" },
+    { kec: "Palu Barat", kota: "Kota Palu", prov: "Sulawesi Tengah", area: "Palu Kota, Kamonji" },
+    { kec: "Kendari Kota", kota: "Kota Kendari", prov: "Sulawesi Tenggara", area: "Mandonga, Korumba" },
+    { kec: "Ambon Kota", kota: "Kota Ambon", prov: "Maluku", area: "Sirimau, Honipopu" },
+    { kec: "Jayapura Utara", kota: "Kota Jayapura", prov: "Papua", area: "Gurabesi, Imbi, Tanjung Ria" },
+    { kec: "Sorong Kota", kota: "Kota Sorong", prov: "Papua Barat Daya", area: "Sorong Timur, Remu" }
+  ];
+
+  function attachRegionAutocomplete(searchInputId, dropdownId, kecInputId, kotaInputId, provInputId){
+    var searchInput = document.getElementById(searchInputId);
+    var dropdownEl = document.getElementById(dropdownId);
+    if(!searchInput || !dropdownEl) return;
+
+    searchInput.addEventListener('input', function(){
+      var q = searchInput.value.trim().toLowerCase();
+      if(q.length < 2){
+        dropdownEl.classList.add('hidden');
+        return;
+      }
+
+      var matches = REGION_DB.filter(function(item){
+        return item.kec.toLowerCase().indexOf(q) !== -1 ||
+               item.kota.toLowerCase().indexOf(q) !== -1 ||
+               item.prov.toLowerCase().indexOf(q) !== -1 ||
+               (item.area && item.area.toLowerCase().indexOf(q) !== -1);
+      });
+
+      if(matches.length === 0){
+        dropdownEl.classList.add('hidden');
+        return;
+      }
+
+      var html = '';
+      matches.slice(0, 6).forEach(function(m){
+        html +=
+          '<button type="button" class="region-item" data-kec="' + m.kec + '" data-kota="' + m.kota + '" data-prov="' + m.prov + '">' +
+            '<div class="reg-name">' + m.kec + ', ' + m.kota + '</div>' +
+            '<div class="reg-sub">' + m.prov + (m.area ? ' (' + m.area + ')' : '') + '</div>' +
+          '</button>';
+      });
+
+      dropdownEl.innerHTML = html;
+      dropdownEl.classList.remove('hidden');
+
+      dropdownEl.querySelectorAll('.region-item').forEach(function(itemBtn){
+        itemBtn.addEventListener('click', function(){
+          var kec = itemBtn.getAttribute('data-kec');
+          var kota = itemBtn.getAttribute('data-kota');
+          var prov = itemBtn.getAttribute('data-prov');
+
+          var kecEl = document.getElementById(kecInputId);
+          var kotaEl = document.getElementById(kotaInputId);
+          var provEl = provInputId ? document.getElementById(provInputId) : null;
+
+          if(kecEl) kecEl.value = kec;
+          if(kotaEl) kotaEl.value = kota;
+          if(provEl) provEl.value = prov;
+          searchInput.value = kec + ', ' + kota;
+
+          dropdownEl.classList.add('hidden');
+          showToast('Terisi otomatis: ' + kec + ', ' + kota + '!');
+        });
+      });
+    });
+
+    document.addEventListener('click', function(e){
+      if(!searchInput.contains(e.target) && !dropdownEl.contains(e.target)){
+        dropdownEl.classList.add('hidden');
+      }
+    });
+  }
+
+  function setupRegionAutocomplete(){
+    attachRegionAutocomplete('kp-region-search', 'kp-region-dropdown', 'kp-kecamatan', 'kp-kota', 'kp-provinsi');
+  }
+
+  /* ---------------- Theme Toggle Handler ---------------- */
+  var themeToggleBtn = document.getElementById('btn-toggle-theme');
+  function setTheme(theme){
+    document.documentElement.setAttribute('data-theme', theme);
+    themeToggleBtn.textContent = theme === 'dark' ? '🌙' : '☀️';
+    localStorage.setItem('jt_theme', theme);
+  }
+  
+  var savedTheme = localStorage.getItem('jt_theme') || 'dark';
+  setTheme(savedTheme);
+
+  themeToggleBtn.addEventListener('click', function(){
+    var current = document.documentElement.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  /* ---------------- RESI HISTORY STORAGE IN LOCALSTORAGE (FEATURE #5) ---------------- */
+  function getSavedResiHistory(){
+    try {
+      var data = localStorage.getItem('jt_resi_history');
+      return data ? JSON.parse(data) : [];
+    } catch(e) {
+      return [];
+    }
+  }
+
+  function saveResiToHistory(resiStr, typeTag){
+    if(!resiStr) return;
+    var list = getSavedResiHistory();
+    var cleanResi = resiStr.trim().toUpperCase();
+    if(cleanResi.length < 5) return;
+    
+    list = list.filter(function(item){ return item.resi !== cleanResi; });
+    
+    var now = new Date();
+    var timeStr = (now.getHours() < 10 ? '0' : '') + now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+    var dateStr = now.getDate() + ' ' + ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'][now.getMonth()];
+    
+    list.unshift({
+      resi: cleanResi,
+      type: typeTag || 'Resi',
+      time: dateStr + ', ' + timeStr,
+      timestamp: now.getTime()
+    });
+
+    if(list.length > 6){ list = list.slice(0, 6); }
+
+    try {
+      localStorage.setItem('jt_resi_history', JSON.stringify(list));
+    } catch(e) {}
+
+    renderResiHistoryUI();
+  }
+
+  function deleteResiFromHistory(resiStr){
+    var list = getSavedResiHistory();
+    list = list.filter(function(item){ return item.resi !== resiStr; });
+    try {
+      localStorage.setItem('jt_resi_history', JSON.stringify(list));
+    } catch(e) {}
+    renderResiHistoryUI();
+    showToast('Resi berhasil dihapus.');
+  }
+
+  function clearAllResiHistory(){
+    try {
+      localStorage.removeItem('jt_resi_history');
+    } catch(e) {}
+    renderResiHistoryUI();
+    showToast('Riwayat resi dibersihkan.');
+  }
+
+  function renderResiHistoryUI(){
+    var listEl = document.getElementById('resi-history-list');
+    if(!listEl) return;
+
+    var history = getSavedResiHistory();
+    if(history.length === 0){
+      listEl.innerHTML = '<div style="font-size:12px; color:var(--text-muted); text-align:center; padding:10px 0;">Belum ada riwayat resi tersimpan di HP ini. Resi yang Anda lacak atau kirim akan muncul di sini.</div>';
+      return;
+    }
+
+    var html = '';
+    history.forEach(function(item){
+      html +=
+        '<div class="resi-history-item">' +
+          '<div>' +
+            '<div class="resi-code">' + item.resi + '</div>' +
+            '<div class="resi-meta"><span>🏷️ ' + item.type + '</span> • <span>' + item.time + '</span></div>' +
+          '</div>' +
+          '<div class="resi-actions">' +
+            '<button class="btn-resi-act" data-track-resi="' + item.resi + '">🔍 Lacak</button>' +
+            '<button class="btn-resi-act" data-copy-resi="' + item.resi + '">📋</button>' +
+            '<button class="btn-resi-act" data-del-resi="' + item.resi + '" style="color:var(--error);">🗑️</button>' +
+          '</div>' +
+        '</div>';
+    });
+    listEl.innerHTML = html;
+
+    listEl.querySelectorAll('[data-track-resi]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var resi = btn.getAttribute('data-track-resi');
+        window.open('https://www.jet.co.id/track?keyword=' + encodeURIComponent(resi), '_blank', 'noopener');
+        showToast('Membuka lacak resi ' + resi + '…');
+      });
+    });
+
+    listEl.querySelectorAll('[data-copy-resi]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var resi = btn.getAttribute('data-copy-resi');
+        copyTextToClipboard(resi);
+      });
+    });
+
+    listEl.querySelectorAll('[data-del-resi]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var resi = btn.getAttribute('data-del-resi');
+        deleteResiFromHistory(resi);
+      });
+    });
+  }
+
+  var clearHistBtn = document.getElementById('btn-clear-resi-history');
+  if(clearHistBtn){
+    clearHistBtn.addEventListener('click', function(){ clearAllResiHistory(); });
+  }
+
+  /* ---------------- AUTOMATED ADMIN SHIFT SCHEDULE CALCULATOR ---------------- */
+  function getAdminDutySchedule(nowDate){
+    var d = nowDate || new Date();
+    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    var witaDate = new Date(utc + (3600000 * 8));
+    
+    var day = witaDate.getDay();
+    var hours = witaDate.getHours();
+    var mins = witaDate.getMinutes();
+    var totalMins = hours * 60 + mins;
+    
+    var refMonday = new Date(2026, 7, 10, 0, 0, 0);
+    var diffTime = witaDate.getTime() - refMonday.getTime();
+    var diffDays = Math.floor(diffTime / (1000 * 3600 * 24));
+    var weekIndex = Math.floor(diffDays / 7);
+    if(diffDays < 0){ weekIndex = Math.floor((diffDays - 6) / 7); }
+    
+    var baseShift1Admin = (Math.abs(weekIndex) % 2 === 0) ? "Imam" : "Rahma";
+    var baseShift2Admin = (Math.abs(weekIndex) % 2 === 0) ? "Rahma" : "Imam";
+    
+    var shift1Admin = baseShift1Admin;
+    var shift2Admin = baseShift2Admin;
+    var isKamis = (day === 4);
+    var isSabtu = (day === 6);
+    
+    if(isKamis){
+      shift1Admin = null;
+      shift2Admin = "Rahma";
+    } else if(day === 5){
+      shift1Admin = "Rahma";
+      shift2Admin = "Imam";
+    } else if(isSabtu){
+      shift1Admin = null;
+      shift2Admin = "Imam";
+    }
+
+    var isOpen = totalMins >= 480 && totalMins < 1260;
+    var statusText = "";
+    var activeAdmin = null;
+
+    if(!isOpen){
+      statusText = "Tutup (Buka 08.00 WITA)";
+    } else {
+      if(isKamis){
+        if(totalMins < 780){
+          statusText = "Tutup (Buka 13.00 WITA - Shift 2: Admin Rahma)";
+        } else {
+          statusText = "Buka (Shift 2: Admin Rahma)";
+          activeAdmin = "Rahma";
+        }
+      } else if(isSabtu){
+        if(totalMins < 780){
+          statusText = "Tutup (Buka 13.00 WITA - Shift 2: Admin Imam)";
+        } else {
+          statusText = "Buka (Shift 2: Admin Imam)";
+          activeAdmin = "Imam";
+        }
+      } else {
+        if(totalMins >= 480 && totalMins < 780){
+          statusText = "Buka (Shift 1: Admin " + shift1Admin + ")";
+          activeAdmin = shift1Admin;
+        } else if(totalMins >= 780 && totalMins < 990){
+          statusText = "Buka (Shift 1 & 2: Admin " + shift1Admin + " & " + shift2Admin + ")";
+          activeAdmin = "BOTH";
+        } else if(totalMins >= 990 && totalMins < 1260){
+          statusText = "Buka (Shift 2: Admin " + shift2Admin + ")";
+          activeAdmin = shift2Admin;
+        }
+      }
+    }
+
+    return {
+      witaDate: witaDate,
+      day: day,
+      isOpen: isOpen,
+      shift1Admin: shift1Admin,
+      shift2Admin: shift2Admin,
+      activeAdmin: activeAdmin,
+      statusText: statusText,
+      isKamis: isKamis,
+      isSabtu: isSabtu,
+      weekIndex: weekIndex
+    };
+  }
+
+  function updateDutyScheduleUI(){
+    var sched = getAdminDutySchedule();
+    
+    var pill = document.getElementById('live-status-pill');
+    var text = document.getElementById('status-text');
+    
+    if(sched.isOpen && sched.activeAdmin){
+      pill.className = 'status-pill';
+      text.textContent = sched.statusText;
+    } else {
+      pill.className = 'status-pill closed';
+      text.textContent = sched.statusText;
+    }
+
+    var s1Text = sched.shift1Admin ? ("Admin " + sched.shift1Admin) : "LIBUR (Hanya Shift 2)";
+    var s2Text = sched.shift2Admin ? ("Admin " + sched.shift2Admin) : "LIBUR";
+    if(sched.day === 5) s2Text += " (Khusus Jumat)";
+    
+    var elShift1 = document.getElementById('duty-shift1-name');
+    var elShift2 = document.getElementById('duty-shift2-name');
+    var elCurrent = document.getElementById('duty-current-status');
+    
+    if(elShift1) elShift1.textContent = s1Text;
+    if(elShift2) elShift2.textContent = s2Text;
+    if(elCurrent){
+      elCurrent.textContent = sched.statusText;
+      elCurrent.style.color = (sched.isOpen && sched.activeAdmin) ? 'var(--success)' : 'var(--error)';
+    }
+
+    function applyAdminBadge(badgeId, adminName){
+      var el = document.getElementById(badgeId);
+      if(!el) return;
+      
+      if((sched.isKamis && adminName === 'Imam') || (sched.isSabtu && adminName === 'Rahma')){
+        el.textContent = "🏖️ LIBUR (Hari Ini)";
+        el.className = "badge-off-live";
+      } else if(sched.activeAdmin === adminName || sched.activeAdmin === 'BOTH'){
+        el.textContent = "🟢 ON DUTY (Fast Response)";
+        el.className = "badge-duty-live";
+      } else {
+        if(adminName === sched.shift1Admin){
+          el.textContent = "Shift 1 (08.00-16.30)";
+        } else if(adminName === sched.shift2Admin){
+          el.textContent = "Shift 2 (13.00-21.00)";
+        } else {
+          el.textContent = "Shift Off";
+        }
+        el.className = "badge-duty-live";
+        el.style.background = "var(--border)";
+        el.style.color = "var(--text-muted)";
+      }
+    }
+
+    var adminIds = ['home', 'settings', 'kp', 'kb', 'gs', 'pr'];
+    adminIds.forEach(function(suffix){
+      applyAdminBadge('badge-imam-' + suffix, 'Imam');
+      applyAdminBadge('badge-rahma-' + suffix, 'Rahma');
+      applyAdminBadge('preview-badge-imam-' + suffix, 'Imam');
+      applyAdminBadge('preview-badge-rahma-' + suffix, 'Rahma');
+    });
+
+    renderResiHistoryUI();
+  }
+
+  setupRegionAutocomplete();
+  updateDutyScheduleUI();
+  setInterval(updateDutyScheduleUI, 60000);
+
+  /* ---------------- Navigation Engine ---------------- */
+  var welcomeScreen = document.getElementById('welcome-screen');
+  var dashboardScreen = document.getElementById('dashboard-screen');
+  var views = document.querySelectorAll('.view');
+  var menuButtons = document.querySelectorAll('[data-menu]');
+  var navTabs = document.querySelectorAll('.nav-tab');
+
+  document.getElementById('btn-enter-dashboard').addEventListener('click', function(){
+    goToDashboard();
+  });
+
+  var MENU_GROUP = {
+    'kirim-pilihan':'kirim', 'kirim':'kirim', 'kirim-banyak':'kirim',
+    'preview-kirim':'kirim', 'preview-kirim-banyak':'kirim',
+    'preview-gabung':'gabung', 'preview-pengambilan':'pengambilan',
+    'sprinter-area':'sprinter', 'sprinter-kurir':'sprinter', 'sprinter-form':'sprinter'
+  };
+
+  function showView(name){
+    views.forEach(function(v){ v.classList.add('hidden'); });
+    var target = document.getElementById('view-' + name);
+    if(target){ target.classList.remove('hidden'); }
+    var menuKey = MENU_GROUP[name] || name;
+
+    navTabs.forEach(function(tab){
+      tab.classList.toggle('active', tab.getAttribute('data-nav') === menuKey);
+    });
+
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function safeHistory(method, state, hash){
+    try { history[method](state, '', hash); } catch(e) {}
+  }
+
+  function applyState(state){
+    if(!state || state.screen === 'welcome'){
+      dashboardScreen.classList.add('hidden');
+      welcomeScreen.classList.remove('hidden');
+      return;
+    }
+    welcomeScreen.classList.add('hidden');
+    dashboardScreen.classList.remove('hidden');
+    showView(state.view || 'menu');
+  }
+
+  function goToDashboard(){
+    welcomeScreen.classList.add('hidden');
+    dashboardScreen.classList.remove('hidden');
+    showView('menu');
+    safeHistory('pushState', {screen:'dashboard', view:'menu'}, '#dashboard-menu');
+  }
+
+  function navigateTo(name){
+    showView(name);
+    safeHistory('pushState', {screen:'dashboard', view:name}, '#' + name);
+  }
+
+  safeHistory('replaceState', {screen:'welcome'}, '#welcome');
+  window.addEventListener('popstate', function(e){
+    applyState(e.state);
+  });
+
+  menuButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var menu = btn.getAttribute('data-menu');
+      if(menu === 'lacak'){
+        window.open('https://www.jet.co.id/track', '_blank', 'noopener');
+        showToast('Membuka Lacak Resi J&T Express…');
+        return;
+      }
+      if(menu === 'ongkir'){
+        window.open('https://www.jet.co.id/rates', '_blank', 'noopener');
+        showToast('Membuka Cek Tarif Ongkir…');
+        return;
+      }
+      if(menu === 'kirim'){
+        navigateTo('kirim-pilihan');
+        return;
+      }
+      if(menu === 'sprinter'){
+        navigateTo('sprinter-area');
+        return;
+      }
+      navigateTo(menu);
+    });
+  });
+
+  navTabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var navKey = tab.getAttribute('data-nav');
+      if(navKey === 'kirim'){
+        navigateTo('kirim-pilihan');
+        return;
+      }
+      if(navKey === 'sprinter'){
+        navigateTo('sprinter-area');
+        return;
+      }
+      navigateTo(navKey);
+    });
+  });
+
+  document.getElementById('btn-pilih-satu').addEventListener('click', function(){ navigateTo('kirim'); });
+  document.getElementById('btn-pilih-banyak').addEventListener('click', function(){ navigateTo('kirim-banyak'); });
+
+  document.querySelectorAll('[data-back]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      navigateTo(btn.getAttribute('data-back'));
+    });
+  });
+
+  /* ---------------- Toast Notification ---------------- */
+  var toastEl = document.getElementById('toast');
+  var toastTimer = null;
+  function showToast(msg){
+    toastEl.innerHTML = '<span>ℹ️</span> <span>' + msg + '</span>';
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2800);
+  }
+
+  /* ---------------- Copy to Clipboard ---------------- */
+  function copyTextToClipboard(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        showToast('Format pesan berhasil disalin!');
+      }).catch(function(){
+        fallbackCopyText(text);
+      });
+    } else {
+      fallbackCopyText(text);
+    }
+  }
+
+  function fallbackCopyText(text){
+    var textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      showToast('Format pesan berhasil disalin!');
+    } catch(e) {
+      showToast('Gagal menyalin teks secara otomatis.');
+    }
+    document.body.removeChild(textArea);
+  }
+
+  document.getElementById('btn-copy-kp').addEventListener('click', function(){ copyTextToClipboard(kpPendingMessage); });
+  document.getElementById('btn-copy-kb').addEventListener('click', function(){ copyTextToClipboard(kbPendingMessage); });
+  document.getElementById('btn-copy-gs').addEventListener('click', function(){ copyTextToClipboard(gsPendingMessage); });
+  document.getElementById('btn-copy-pr').addEventListener('click', function(){ copyTextToClipboard(prPendingMessage); });
+
+  /* ---------------- Radio Toggle visual styling ---------------- */
+  function attachRadioToggle(scope){
+    scope.querySelectorAll('[data-radio-opt]').forEach(function(label){
+      var input = label.querySelector('input[type="radio"]');
+      if(!input) return;
+      input.addEventListener('change', function(){
+        var group = document.getElementsByName(input.name);
+        group.forEach(function(radio){
+          var opt = radio.closest('.radio-card');
+          if(opt) opt.classList.toggle('checked', radio.checked);
+        });
+      });
+    });
+  }
+  attachRadioToggle(document);
+
+  /* ---------------- Digit-only Helper ---------------- */
+  function enforceDigitsOnly(el){
+    if(!el) return;
+    el.addEventListener('input', function(){
+      var cleaned = el.value.replace(/[^0-9]/g, '');
+      if(cleaned !== el.value){ el.value = cleaned; }
+    });
+  }
+  ['kp-no-rumah','kp-rt','kp-rw'].forEach(function(id){
+    enforceDigitsOnly(document.getElementById(id));
+  });
+
+  /* ---------------- Phone Formatter ---------------- */
+  function normalizePhoneInput(el){
+    if(!el) return;
+    el.addEventListener('input', function(){
+      var digits = el.value.replace(/[^0-9]/g, '');
+      el.value = digits;
+    });
+    el.addEventListener('blur', function(){
+      var digits = el.value.replace(/[^0-9]/g, '');
+      if(digits.length === 0) return;
+      if(digits.charAt(0) !== '0'){ digits = '0' + digits; }
+      el.value = digits;
+    });
+  }
+  ['kp-hp-pengirim','kp-hp-penerima'].forEach(function(id){
+    normalizePhoneInput(document.getElementById(id));
+  });
+
+  function isValidPhone(value){
+    var digits = value.replace(/[^0-9]/g, '');
+    if(digits.length === 0) return false;
+    if(digits.charAt(0) !== '0'){ digits = '0' + digits; }
+    if(digits.slice(0,2) !== '08') return false;
+    if(digits.length < 10 || digits.length > 13) return false;
+    return true;
+  }
+  
+  function normalizedPhone(value){
+    var digits = value.replace(/[^0-9]/g, '');
+    if(digits.length > 0 && digits.charAt(0) !== '0'){ digits = '0' + digits; }
+    return digits;
+  }
+
+  /* ---------------- Field Error Helpers ---------------- */
+  function setFieldError(inputId, hasError){
+    var input = document.getElementById(inputId);
+    var err = document.getElementById('err-' + inputId);
+    if(!input) return;
+    input.classList.toggle('err-input', hasError);
+    if(err){ err.classList.toggle('show', hasError); }
+  }
+  
+  function setGroupError(errId, hasError){
+    var err = document.getElementById(errId);
+    if(err){ err.classList.toggle('show', hasError); }
+  }
+
+  /* ---------------- KIRIM PAKET SINGLE: VALIDATION & PREVIEW ---------------- */
+  var kpFieldIds = [
+    'kp-nama-pengirim','kp-hp-pengirim',
+    'kp-nama-penerima','kp-hp-penerima','kp-alamat','kp-no-rumah','kp-rt','kp-rw',
+    'kp-kecamatan','kp-kota','kp-provinsi','kp-jenis-barang'
+  ];
+
+  document.getElementById('kp-submit').addEventListener('click', function(){
+    var firstInvalid = null;
+    var valid = true;
+
+    kpFieldIds.forEach(function(id){
+      var el = document.getElementById(id);
+      var val = el.value.trim();
+      var fieldValid = val.length > 0;
+
+      if((id === 'kp-hp-pengirim' || id === 'kp-hp-penerima') && val.length > 0){
+        fieldValid = isValidPhone(val);
+      }
+
+      setFieldError(id, !fieldValid);
+      if(!fieldValid){
+        valid = false;
+        if(!firstInvalid) firstInvalid = el;
+      }
+    });
+
+    var pembayaran = document.querySelector('input[name="kp-pembayaran"]:checked');
+    var pembayaranValid = !!pembayaran;
+    setGroupError('err-kp-pembayaran', !pembayaranValid);
+    if(!pembayaranValid){
+      valid = false;
+      if(!firstInvalid) firstInvalid = document.getElementById('kp-pembayaran-row');
+    }
+
+    if(!valid){
+      showToast('Masih ada data yang belum lengkap.');
+      if(firstInvalid && firstInvalid.focus) firstInvalid.focus();
+      if(firstInvalid && firstInvalid.scrollIntoView) firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    buildKirimPreview(pembayaran.value);
+    navigateTo('preview-kirim');
+  });
+
+  function buildKirimPreview(pembayaran){
+    var namaPengirim = document.getElementById('kp-nama-pengirim').value.trim();
+    var hpPengirim = normalizedPhone(document.getElementById('kp-hp-pengirim').value.trim());
+    var namaPenerima = document.getElementById('kp-nama-penerima').value.trim();
+    var hpPenerima = normalizedPhone(document.getElementById('kp-hp-penerima').value.trim());
+    var alamat = document.getElementById('kp-alamat').value.trim();
+    var noRumah = document.getElementById('kp-no-rumah').value.trim();
+    var rt = document.getElementById('kp-rt').value.trim();
+    var rw = document.getElementById('kp-rw').value.trim();
+    var kecamatan = document.getElementById('kp-kecamatan').value.trim();
+    var kota = document.getElementById('kp-kota').value.trim();
+    var provinsi = document.getElementById('kp-provinsi').value.trim();
+    var jenisBarang = document.getElementById('kp-jenis-barang').value.trim();
+
+    var pesan =
+      "Pengirim :\n" +
+      namaPengirim + ", " + hpPengirim + "\n\n" +
+      "Penerima :\n" +
+      namaPenerima + ", " + hpPenerima + ", " + alamat + ", No " + noRumah +
+      ", Rt " + rt + ", Rw " + rw + ", " + kecamatan + ", " + kota + ", " + provinsi + "\n\n" +
+      "Jenis Barang / Nama Barang :\n" +
+      jenisBarang + "\n\n" +
+      "Ongkir :\n" +
+      pembayaran + "\n\n" +
+      "------------------------------------";
+
+    document.getElementById('kp-preview-text').textContent = pesan;
+
+    var checklistItems = [
+      'Pengirim & Penerima terisi',
+      'No HP terverifikasi (min 10 digit, 08)',
+      'Alamat & lokasi lengkap',
+      'Jenis barang & metode pembayaran terisi (' + pembayaran + ')'
+    ];
+    renderChecklist('kp-checklist', checklistItems);
+
+    kpPendingMessage = pesan;
+  }
+
+  function renderChecklist(id, items){
+    var ul = document.getElementById(id);
+    ul.innerHTML = '';
+    items.forEach(function(text){
+      var li = document.createElement('li');
+      li.innerHTML = '<span class="tick">✓</span><span>' + text + '</span>';
+      ul.appendChild(li);
+    });
+  }
+
+  var kpPendingMessage = '';
+  var gsPendingMessage = '';
+  var prPendingMessage = '';
+  var kbPendingMessage = '';
+
+  /* ---------------- KIRIM BANYAK PAKET (BULK) ---------------- */
+  normalizePhoneInput(document.getElementById('kb-hp-pengirim'));
+
+  var kbSelectedJumlah = 0;
+  var kbPenerimaContainer = document.getElementById('kb-penerima-container');
+
+  function recipientBlockHtml(i){
+    return (
+      '<div class="recipient-card-mobile">' +
+        '<h3>Penerima Paket ke-' + i + '</h3>' +
+        '<div class="field-mobile">' +
+          '<label>Nama Penerima <span class="req">*</span></label>' +
+          '<input type="text" id="kb-nama-' + i + '" placeholder="Nama penerima">' +
+          '<div class="err-msg" id="err-kb-nama-' + i + '">Wajib diisi.</div>' +
+        '</div>' +
+        '<div class="field-mobile">' +
+          '<label>No HP Penerima <span class="req">*</span></label>' +
+          '<input type="tel" id="kb-hp-' + i + '" placeholder="08xxxxxxxxxx" inputmode="numeric">' +
+          '<div class="err-msg" id="err-kb-hp-' + i + '">Nomor HP tidak valid.</div>' +
+        '</div>' +
+        '<div class="field-mobile" style="position:relative;">' +
+          '<label>⚡ Cari Kota / Kecamatan Otomatis</label>' +
+          '<input type="text" id="kb-region-search-' + i + '" placeholder="Ketik: Kelayan, Martapura, Surabaya..." autocomplete="off">' +
+          '<div id="kb-region-dropdown-' + i + '" class="region-dropdown hidden"></div>' +
+        '</div>' +
+        '<div class="field-mobile">' +
+          '<label>Alamat Lengkap <span class="req">*</span></label>' +
+          '<input type="text" id="kb-alamat-' + i + '" placeholder="Jalan / Gang / No">' +
+          '<div class="err-msg" id="err-kb-alamat-' + i + '">Wajib diisi.</div>' +
+        '</div>' +
+        '<div class="grid-3">' +
+          '<div class="field-mobile"><label>No Rumah</label><input type="text" id="kb-no-rumah-' + i + '" placeholder="12" inputmode="numeric"></div>' +
+          '<div class="field-mobile"><label>RT</label><input type="text" id="kb-rt-' + i + '" placeholder="003" inputmode="numeric"></div>' +
+          '<div class="field-mobile"><label>RW</label><input type="text" id="kb-rw-' + i + '" placeholder="005" inputmode="numeric"></div>' +
+        '</div>' +
+        '<div class="grid-2">' +
+          '<div class="field-mobile">' +
+            '<label>Kecamatan <span class="req">*</span></label>' +
+            '<input type="text" id="kb-kecamatan-' + i + '" placeholder="Kecamatan">' +
+            '<div class="err-msg" id="err-kb-kecamatan-' + i + '">Wajib.</div>' +
+          '</div>' +
+          '<div class="field-mobile">' +
+            '<label>Kota/Kab <span class="req">*</span></label>' +
+            '<input type="text" id="kb-kota-' + i + '" placeholder="Kota/Kab">' +
+            '<div class="err-msg" id="err-kb-kota-' + i + '">Wajib.</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="field-mobile">' +
+          '<label>Ongkir <span class="req">*</span></label>' +
+          '<div class="radio-group">' +
+            '<label class="radio-card" data-radio-opt><input type="radio" name="kb-ongkir-' + i + '" value="DFOD"><span>DFOD</span></label>' +
+            '<label class="radio-card" data-radio-opt><input type="radio" name="kb-ongkir-' + i + '" value="Cash"><span>Cash</span></label>' +
+          '</div>' +
+          '<div class="err-msg" id="err-kb-ongkir-' + i + '">Pilih metode pembayaran.</div>' +
+        '</div>' +
+        '<div class="field-mobile">' +
+          '<label>Jenis Barang <span class="req">*</span></label>' +
+          '<input type="text" id="kb-jenis-' + i + '" list="jenis-barang-list" placeholder="Dokumen, Pakaian, dsb.">' +
+          '<div class="err-msg" id="err-kb-jenis-' + i + '">Wajib diisi.</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function renderPenerimaBlocks(n){
+    var html = '';
+    for(var i = 1; i <= n; i++){ html += recipientBlockHtml(i); }
+    kbPenerimaContainer.innerHTML = html;
+    for(var j = 1; j <= n; j++){
+      enforceDigitsOnly(document.getElementById('kb-no-rumah-' + j));
+      enforceDigitsOnly(document.getElementById('kb-rt-' + j));
+      enforceDigitsOnly(document.getElementById('kb-rw-' + j));
+      normalizePhoneInput(document.getElementById('kb-hp-' + j));
+      attachRegionAutocomplete('kb-region-search-' + j, 'kb-region-dropdown-' + j, 'kb-kecamatan-' + j, 'kb-kota-' + j);
+    }
+    attachRadioToggle(kbPenerimaContainer);
+  }
+
+  document.querySelectorAll('#kb-jumlah-row .chip').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      kbSelectedJumlah = parseInt(chip.getAttribute('data-jumlah'), 10);
+      document.querySelectorAll('#kb-jumlah-row .chip').forEach(function(c){
+        c.classList.toggle('active', c === chip);
+      });
+      setGroupError('err-kb-jumlah', false);
+      renderPenerimaBlocks(kbSelectedJumlah);
+    });
+  });
+
+  document.getElementById('kb-submit').addEventListener('click', function(){
+    var firstInvalid = null;
+    var valid = true;
+
+    var namaPengirim = document.getElementById('kb-nama-pengirim');
+    var namaPengirimValid = namaPengirim.value.trim().length > 0;
+    setFieldError('kb-nama-pengirim', !namaPengirimValid);
+    if(!namaPengirimValid){ valid = false; firstInvalid = firstInvalid || namaPengirim; }
+
+    var hpPengirim = document.getElementById('kb-hp-pengirim');
+    var hpPengirimValid = isValidPhone(hpPengirim.value.trim());
+    setFieldError('kb-hp-pengirim', !hpPengirimValid);
+    if(!hpPengirimValid){ valid = false; firstInvalid = firstInvalid || hpPengirim; }
+
+    var jumlahValid = kbSelectedJumlah >= 1 && kbSelectedJumlah <= 10;
+    setGroupError('err-kb-jumlah', !jumlahValid);
+    if(!jumlahValid){
+      valid = false;
+      firstInvalid = firstInvalid || document.getElementById('kb-jumlah-row');
+    }
+
+    var penerimaData = [];
+
+    if(jumlahValid){
+      for(var i = 1; i <= kbSelectedJumlah; i++){
+        var nama = document.getElementById('kb-nama-' + i);
+        var hp = document.getElementById('kb-hp-' + i);
+        var alamat = document.getElementById('kb-alamat-' + i);
+        var noRumah = document.getElementById('kb-no-rumah-' + i);
+        var rt = document.getElementById('kb-rt-' + i);
+        var rw = document.getElementById('kb-rw-' + i);
+        var kecamatan = document.getElementById('kb-kecamatan-' + i);
+        var kota = document.getElementById('kb-kota-' + i);
+        var ongkir = document.querySelector('input[name="kb-ongkir-' + i + '"]:checked');
+        var jenis = document.getElementById('kb-jenis-' + i);
+
+        var namaOk = nama.value.trim().length > 0;
+        setFieldError('kb-nama-' + i, !namaOk);
+        if(!namaOk){ valid = false; firstInvalid = firstInvalid || nama; }
+
+        var hpOk = isValidPhone(hp.value.trim());
+        setFieldError('kb-hp-' + i, !hpOk);
+        if(!hpOk){ valid = false; firstInvalid = firstInvalid || hp; }
+
+        var alamatOk = alamat.value.trim().length > 0;
+        setFieldError('kb-alamat-' + i, !alamatOk);
+        if(!alamatOk){ valid = false; firstInvalid = firstInvalid || alamat; }
+
+        var kecamatanOk = kecamatan.value.trim().length > 0;
+        setFieldError('kb-kecamatan-' + i, !kecamatanOk);
+        if(!kecamatanOk){ valid = false; firstInvalid = firstInvalid || kecamatan; }
+
+        var kotaOk = kota.value.trim().length > 0;
+        setFieldError('kb-kota-' + i, !kotaOk);
+        if(!kotaOk){ valid = false; firstInvalid = firstInvalid || kota; }
+
+        var ongkirOk = !!ongkir;
+        setGroupError('err-kb-ongkir-' + i, !ongkirOk);
+        if(!ongkirOk){ valid = false; firstInvalid = firstInvalid || document.getElementById('err-kb-ongkir-' + i).previousElementSibling; }
+
+        var jenisOk = jenis.value.trim().length > 0;
+        setFieldError('kb-jenis-' + i, !jenisOk);
+        if(!jenisOk){ valid = false; firstInvalid = firstInvalid || jenis; }
+
+        penerimaData.push({
+          nama: nama.value.trim(),
+          hp: normalizedPhone(hp.value.trim()),
+          alamat: alamat.value.trim(),
+          noRumah: noRumah.value.trim(),
+          rt: rt.value.trim(),
+          rw: rw.value.trim(),
+          kecamatan: kecamatan.value.trim(),
+          kota: kota.value.trim(),
+          ongkir: ongkir ? ongkir.value : '',
+          jenis: jenis.value.trim()
+        });
+      }
+    }
+
+    if(!valid){
+      showToast('Masih ada data penerima yang belum lengkap.');
+      if(firstInvalid && firstInvalid.focus) firstInvalid.focus();
+      if(firstInvalid && firstInvalid.scrollIntoView) firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    var lines = [];
+    lines.push('PENGIRIM :');
+    lines.push(namaPengirim.value.trim() + ', ' + normalizedPhone(hpPengirim.value.trim()));
+    lines.push('');
+
+    penerimaData.forEach(function(p, idx){
+      var extra = '';
+      if(p.noRumah) extra += ', No ' + p.noRumah;
+      if(p.rt) extra += ', Rt ' + p.rt;
+      if(p.rw) extra += ', Rw ' + p.rw;
+
+      lines.push('Penerima ' + (idx + 1) + ' :');
+      lines.push(p.nama + ', ' + p.hp + ', ' + p.alamat + extra + ', ' + p.kecamatan + ', ' + p.kota);
+      lines.push('Ongkir : ' + p.ongkir);
+      lines.push('Jenis Barang : ' + p.jenis);
+      lines.push('');
+    });
+
+    lines.push('------------------------------------');
+    var pesan = lines.join('\n');
+
+    document.getElementById('kb-preview-text').textContent = pesan;
+    renderChecklist('kb-checklist', [
+      'Data Pengirim lengkap',
+      'Total ' + penerimaData.length + ' data penerima terisi',
+      'Format resi & ongkir terverifikasi'
+    ]);
+
+    kbPendingMessage = pesan;
+    navigateTo('preview-kirim-banyak');
+  });
+
+  /* ---------------- PENGAMBILAN: RETURAN / PAKET ---------------- */
+  var prReturanExtra = document.getElementById('pr-returan-extra');
+  var prJadwalFields = document.getElementById('pr-jadwal-fields');
+  var PR_MAX_RESI = 15;
+
+  document.querySelectorAll('input[name="pr-jenis"]').forEach(function(radio){
+    radio.addEventListener('change', function(){
+      var isReturan = radio.value === 'Pengambilan Returan' && radio.checked;
+      prReturanExtra.classList.toggle('hidden', !isReturan);
+    });
+  });
+
+  document.querySelectorAll('input[name="pr-waktu-pilihan"]').forEach(function(radio){
+    radio.addEventListener('change', function(){
+      var isJadwal = radio.value === 'jadwal' && radio.checked;
+      prJadwalFields.classList.toggle('hidden', !isJadwal);
+    });
+  });
+
+  var HARI_ID = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+  function formatTanggalIndo(dateStr){
+    var parts = dateStr.split('-');
+    var d = new Date(parseInt(parts[0],10), parseInt(parts[1],10)-1, parseInt(parts[2],10));
+    var hari = HARI_ID[d.getDay()];
+    return 'Hari ' + hari + ', ' + parts[2] + '-' + parts[1] + '-' + parts[0];
+  }
+
+  document.getElementById('pr-submit').addEventListener('click', function(){
+    var firstInvalid = null;
+    var valid = true;
+
+    var jenis = document.querySelector('input[name="pr-jenis"]:checked');
+    var jenisValid = !!jenis;
+    setGroupError('err-pr-jenis', !jenisValid);
+    if(!jenisValid){ valid = false; firstInvalid = firstInvalid || document.getElementById('pr-jenis-row'); }
+
+    var isReturan = jenisValid && jenis.value === 'Pengambilan Returan';
+    var waktuPilihan = null;
+    var tanggalEl = document.getElementById('pr-tanggal');
+    var jamEl = document.getElementById('pr-jam');
+
+    if(isReturan){
+      waktuPilihan = document.querySelector('input[name="pr-waktu-pilihan"]:checked');
+      var waktuValid = !!waktuPilihan;
+      setGroupError('err-pr-waktu', !waktuValid);
+      if(!waktuValid){ valid = false; firstInvalid = firstInvalid || document.getElementById('pr-waktu-row'); }
+
+      if(waktuValid && waktuPilihan.value === 'jadwal'){
+        var jadwalValid = tanggalEl.value.trim().length > 0 && jamEl.value.trim().length > 0;
+        setGroupError('err-pr-jadwal', !jadwalValid);
+        if(!jadwalValid){ valid = false; firstInvalid = firstInvalid || tanggalEl; }
+      } else {
+        setGroupError('err-pr-jadwal', false);
+      }
+    }
+
+    var resiInput = document.getElementById('pr-no-resi');
+    var resiList = resiInput.value
+      .split(/[\n,]/)
+      .map(function(s){ return s.trim(); })
+      .filter(function(s){ return s.length > 0; });
+    var resiCountValid = resiList.length >= 1 && resiList.length <= PR_MAX_RESI;
+
+    var seen = {};
+    var hasDuplicate = false;
+    resiList.forEach(function(resi){
+      var key = resi.toLowerCase();
+      if(seen[key]){ hasDuplicate = true; }
+      seen[key] = true;
+    });
+
+    var resiValid = resiCountValid && !hasDuplicate;
+    setFieldError('pr-no-resi', !resiValid);
+    var resiErrEl = document.getElementById('err-pr-no-resi');
+    if(!resiCountValid){
+      resiErrEl.textContent = 'Masukkan minimal 1 dan maksimal ' + PR_MAX_RESI + ' no resi.';
+    } else if(hasDuplicate){
+      resiErrEl.textContent = 'Terdapat nomor resi ganda dalam daftar.';
+    }
+    if(!resiValid){ valid = false; firstInvalid = firstInvalid || resiInput; }
+
+    if(!valid){
+      showToast('Masih ada data yang perlu dikoreksi.');
+      if(firstInvalid && firstInvalid.focus) firstInvalid.focus();
+      if(firstInvalid && firstInvalid.scrollIntoView) firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    // Auto-save resi list to localStorage history
+    resiList.forEach(function(resiStr){
+      saveResiToHistory(resiStr, isReturan ? 'Returan' : 'Ambil Paket');
+    });
+
+    var pesan;
+    var checklistItems;
+
+    if(isReturan){
+      var namaToko = document.getElementById('pr-nama-toko').value.trim();
+      var waktuText;
+      if(waktuPilihan.value === 'sekarang'){
+        waktuText = 'Sekarang';
+      } else {
+        var jamText = jamEl.value.replace(':', '.');
+        waktuText = formatTanggalIndo(tanggalEl.value) + ' pukul ' + jamText;
+      }
+      var salamToko = namaToko
+        ? ('Saya dari Toko ' + namaToko + ' ingin mengambil retur.')
+        : 'Saya ingin mengambil retur.';
+      var resiSpaced = resiList.join(' ');
+
+      pesan =
+        'Halo Admin,\n' +
+        salamToko + '\n' +
+        'Untuk pengambilan retur:\n' +
+        waktuText + '\n' +
+        '(sesuai waktu yang dipilih customer).\n' +
+        'Mohon bantuannya untuk disiapkan ya, Min. 🙏\n' +
+        'No. Resi (maks. ' + PR_MAX_RESI + ' resi):\n' +
+        resiSpaced + '\n' +
+        'Terima kasih atas bantuannya, Min. 🙏';
+
+      checklistItems = [
+        'Jenis Permintaan Returan terisi',
+        'Jadwal pick-up ditentukan (' + waktuPilihan.value + ')',
+        'Daftar ' + resiList.length + ' resi terverifikasi (bebas duplikat)'
+      ];
+    } else {
+      var resiText = resiList.map(function(resi, i){ return (i + 1) + ". " + resi; }).join("\n");
+      pesan =
+        "Jenis Pengambilan :\n" +
+        jenis.value + "\n\n" +
+        "No Resi (" + resiList.length + ") :\n" +
+        resiText + "\n\n" +
+        "------------------------------------";
+
+      checklistItems = [
+        'Jenis Permintaan Pengambilan Paket terisi',
+        'Daftar ' + resiList.length + ' resi valid'
+      ];
+    }
+
+    document.getElementById('pr-preview-text').textContent = pesan;
+    renderChecklist('pr-checklist', checklistItems);
+
+    prPendingMessage = pesan;
+    navigateTo('preview-pengambilan');
+  });
+
+  /* ---------------- GABUNG GROUP SELLER ---------------- */
+  document.getElementById('gs-submit').addEventListener('click', function(){
+    var firstInvalid = null;
+    var valid = true;
+
+    var namaToko = document.getElementById('gs-nama-toko');
+    var namaTokoValid = namaToko.value.trim().length > 0;
+    setFieldError('gs-nama-toko', !namaTokoValid);
+    if(!namaTokoValid){ valid = false; firstInvalid = firstInvalid || namaToko; }
+
+    var pengiriman = document.querySelector('input[name="gs-pengiriman"]:checked');
+    var pengirimanValid = !!pengiriman;
+    setGroupError('err-gs-pengiriman', !pengirimanValid);
+    if(!pengirimanValid){ valid = false; firstInvalid = firstInvalid || document.getElementById('gs-pengiriman-row'); }
+
+    var noResi = document.getElementById('gs-no-resi');
+    var noResiValid = noResi.value.trim().length > 0;
+    setFieldError('gs-no-resi', !noResiValid);
+    if(!noResiValid){ valid = false; firstInvalid = firstInvalid || noResi; }
+
+    if(!valid){
+      showToast('Masih ada data yang kosong.');
+      if(firstInvalid && firstInvalid.focus) firstInvalid.focus();
+      if(firstInvalid && firstInvalid.scrollIntoView) firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    saveResiToHistory(noResi.value.trim(), 'Seller');
+
+    var pesan = "Hallo Admin saya ingin gabung Group Seller, Saya Dari Toko " +
+      namaToko.value.trim() + " pengiriman Terakhir saya dari " + pengiriman.value +
+      " Dengan No Resi " + noResi.value.trim();
+
+    document.getElementById('gs-preview-text').textContent = pesan;
+    renderChecklist('gs-checklist', [
+      'Nama toko terisi',
+      'Tipe pengiriman dipilih (' + pengiriman.value + ')',
+      'No resi pengiriman terakhir terisi'
+    ]);
+
+    gsPendingMessage = pesan;
+    navigateTo('preview-gabung');
+  });
+
+  /* ---------------- Admin WhatsApp Dispatcher ---------------- */
+  var adminNumbers = {
+    imam: '62887435377117',
+    rahma: '625252743530'
+  };
+
+  document.querySelectorAll('[data-admin]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var admin = btn.getAttribute('data-admin');
+      var flow = btn.getAttribute('data-flow');
+      var message = flow === 'kirim' ? kpPendingMessage :
+                    flow === 'gabung' ? gsPendingMessage :
+                    flow === 'pengambilan' ? prPendingMessage : kbPendingMessage;
+      if(!message){
+        showToast('Pesan belum siap. Silakan ulangi dari form.');
+        return;
+      }
+      var number = adminNumbers[admin];
+      var url = 'https://wa.me/' + number + '?text=' + encodeURIComponent(message);
+      window.open(url, '_blank', 'noopener');
+      showToast('Membuka WhatsApp Admin ' + (admin === 'imam' ? 'Imam' : 'Rahma') + '…');
+    });
+  });
+
+  /* ---------------- SPRINTER AREA & COURIER DISPATCHER ---------------- */
+  var SPRINTER_AREAS = {
+    "1": {
+      label: "Jalan Kelayan B",
+      couriers: [
+        { name: "Andre", phone: "6289666310582", coverage: "Depan Masjid Muhammadiyah s/d Gang Cempaka" },
+        { name: "Hamdani", phone: "6289682308830", coverage: "Gg. Gembira RT 14, 15, 16, 17 s/d Gang Harum Manis" },
+        { name: "Farhan", phone: "6281351722678", coverage: "Back-up Area Andre & Hamdani" },
+        { name: "Sirajudin", phone: "6281250080058", coverage: "Komplek Ar-Raudhah s/d Gg. Balai Desa" },
+        { name: "Baidhawi", phone: "6283189891531", coverage: "Mulai Komplek 10 s/d Gg. Darul Aman" },
+        { name: "Fikri", phone: "6283140173024", coverage: "Back-up Area Sirajudin & Baidhawi" }
+      ]
+    },
+    "2": {
+      label: "Jalan Gerilya, Simpang Limau, Tatah Bangkal, & Lingkar Dalam",
+      couriers: [
+        { name: "Kurir Area Gerilya / Simpang Limau", phone: "", coverage: "Gerilya, Simpang Limau, & Lingkar Dalam" }
+      ]
+    },
+    "3": {
+      label: "Mantuil Muka & Jalan Tol (Gubernur Soebarjo)",
+      couriers: [
+        { name: "Kurir Area Mantuil Muka / Jalan Tol", phone: "", coverage: "Water Boom Alfin s/d Jalan Tol" }
+      ]
+    },
+    "4": {
+      label: "Jalan Ks Tubun, Pekauman, & RS Sultan Suriansyah",
+      couriers: [
+        { name: "Kurir Area Ks Tubun / Pekauman", phone: "", coverage: "Ks Tubun, Pekauman, & Sekitar RS" }
+      ]
+    },
+    "5": {
+      label: "Mantuil Belakang & Pulau Bromo",
+      couriers: [
+        { name: "Kurir Area Mantuil Belakang / Pulau Bromo", phone: "", coverage: "Jembatan Basirih s/d PT Meranti & Bromo" }
+      ]
+    }
+  };
+
+  var sprinterSelectedArea = null;
+  var sprinterSelectedKurir = null;
+
+  document.querySelectorAll('#sprinter-area-list [data-area-id]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var areaId = btn.getAttribute('data-area-id');
+      var area = SPRINTER_AREAS[areaId];
+      sprinterSelectedArea = area;
+
+      document.getElementById('sprinter-area-label').textContent = 'Area: ' + area.label;
+
+      var listEl = document.getElementById('sprinter-kurir-list');
+      var html = '';
+      area.couriers.forEach(function(kurir, idx){
+        var available = !!kurir.phone;
+        var subText = kurir.coverage ? kurir.coverage : area.label;
+        html +=
+          '<button class="choice-card' + (available ? '' : ' choice-card-disabled') + '" data-kurir-idx="' + idx + '">' +
+            '<div class="icon">🛵</div>' +
+            '<div>' +
+              '<div class="title">' + kurir.name + '</div>' +
+              '<div class="sub">' + subText + (available ? '' : ' • Nomor WA belum terdaftar') + '</div>' +
+            '</div>' +
+          '</button>';
+      });
+      listEl.innerHTML = html;
+
+      listEl.querySelectorAll('[data-kurir-idx]').forEach(function(kbtn){
+        kbtn.addEventListener('click', function(){
+          var idx = parseInt(kbtn.getAttribute('data-kurir-idx'), 10);
+          var kurir = area.couriers[idx];
+          if(!kurir.phone){
+            showToast('Nomor WhatsApp kurir ini belum tersedia. Silakan hubungi Admin Imam / Rahma.');
+            return;
+          }
+          sprinterSelectedKurir = kurir;
+          document.getElementById('sprinter-kurir-label').textContent = 'Kurir: ' + kurir.name + ' (' + area.label + ')';
+          document.getElementById('sp-nama-customer').value = '';
+          document.getElementById('sp-no-resi').value = '';
+          document.getElementById('sp-pertanyaan').value = '';
+          ['sp-nama-customer','sp-no-resi','sp-pertanyaan'].forEach(function(id){ setFieldError(id, false); });
+          navigateTo('sprinter-form');
+        });
+      });
+
+      navigateTo('sprinter-kurir');
+    });
+  });
+
+  document.getElementById('sp-submit').addEventListener('click', function(){
+    if(!sprinterSelectedKurir){
+      showToast('Silakan pilih kurir terlebih dahulu.');
+      navigateTo('sprinter-area');
+      return;
+    }
+
+    var firstInvalid = null;
+    var valid = true;
+
+    var namaCustomer = document.getElementById('sp-nama-customer');
+    var namaOk = namaCustomer.value.trim().length > 0;
+    setFieldError('sp-nama-customer', !namaOk);
+    if(!namaOk){ valid = false; firstInvalid = firstInvalid || namaCustomer; }
+
+    var noResi = document.getElementById('sp-no-resi');
+    var resiOk = noResi.value.trim().length > 0;
+    setFieldError('sp-no-resi', !resiOk);
+    if(!resiOk){ valid = false; firstInvalid = firstInvalid || noResi; }
+
+    var pertanyaan = document.getElementById('sp-pertanyaan');
+    var pertanyaanOk = pertanyaan.value.trim().length > 0;
+    setFieldError('sp-pertanyaan', !pertanyaanOk);
+    if(!pertanyaanOk){ valid = false; firstInvalid = firstInvalid || pertanyaan; }
+
+    if(!valid){
+      showToast('Masih ada kolom yang belum diisi.');
+      if(firstInvalid && firstInvalid.focus) firstInvalid.focus();
+      if(firstInvalid && firstInvalid.scrollIntoView) firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    saveResiToHistory(noResi.value.trim(), 'Kurir');
+
+    var pesan =
+      'Halo Kak ' + sprinterSelectedKurir.name + ' 👋\n' +
+      'Saya ' + namaCustomer.value.trim() + ' ingin menanyakan terkait pengiriman paket dengan No. Resi ' + noResi.value.trim() + '.\n' +
+      'Apakah ' + pertanyaan.value.trim() + '?\n' +
+      'Mohon informasinya ya, Kak. Terima kasih 🙏';
+
+    var url = 'https://wa.me/' + sprinterSelectedKurir.phone + '?text=' + encodeURIComponent(pesan);
+    window.open(url, '_blank', 'noopener');
+    showToast('Membuka WhatsApp Kurir ' + sprinterSelectedKurir.name + '…');
+  });
+
+})();
+</script>
+</body>
+</html>
